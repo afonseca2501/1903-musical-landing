@@ -2,6 +2,7 @@
 
 import { FooterMenuVertical } from "@/components/relume/footer-menu-vertical";
 import { FooterCtaBlock } from "@/components/relume/footer-cta-block";
+import { ProduceLogos } from "@/components/global/produce-logos";
 
 export function GlobalFooter(props: { backdropClass?: string }) {
   return (
@@ -36,6 +37,8 @@ export function GlobalFooter(props: { backdropClass?: string }) {
       showBottomBar={true}
       showDivider={true}
       showBottomRow={true}
+      showProduceLogos={true}
+      produceLogosSlot={<ProduceLogos />}
       showCopyright={true}
       textContent={<>Una producción de Stardust Entertainment.</>}
       showTextLinkList={false}

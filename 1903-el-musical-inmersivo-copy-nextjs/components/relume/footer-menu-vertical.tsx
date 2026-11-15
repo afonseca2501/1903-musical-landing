@@ -38,6 +38,8 @@ export interface FooterMenuVerticalProps {
   showBottomRow?: boolean;
   showCopyright?: boolean;
   textContent?: ReactNode;
+  showProduceLogos?: boolean;
+  produceLogosSlot?: ReactNode;
   showTextLinkList?: boolean;
   textLinkListRows?: Record<string, any>[];
   showCompanyNameImage?: boolean;
@@ -57,6 +59,7 @@ export function FooterMenuVertical(props: FooterMenuVerticalProps) {
   const showCompanyNameImage = props.showCompanyNameImage ?? false;
   const showDivider = props.showDivider ?? true;
   const showCopyright = props.showCopyright ?? true;
+  const showProduceLogos = props.showProduceLogos ?? false;
   const showTextLinkList = props.showTextLinkList ?? true;
   const showBottomRow = props.showBottomRow ?? true;
   const showBottomBar = props.showBottomBar ?? true;
@@ -104,11 +107,16 @@ export function FooterMenuVertical(props: FooterMenuVerticalProps) {
             />}
             {showBottomBar && ((showDivider || showBottomRow) && <div className="stack gap-element-small">
               {showDivider && <Divider dividerOrientation={props.dividerOrientation} />}
-              {showBottomRow && ((showCopyright || showTextLinkList) && <div
-                className="wrap gap-element-horizontal-medium row row-center text-align-center"
-              >
-                {showCopyright && <Text textContent={props.textContent} textSize={"Small"} />}
-                {showTextLinkList && <TextLinkList items={props.textLinkListRows} />}
+              {showBottomRow && ((showProduceLogos || showCopyright || showTextLinkList) && <div className="stack gap-element-small align-items-center">
+                {showProduceLogos && <div className={styles.slot}>
+                  {props.produceLogosSlot}
+                </div>}
+                {(showCopyright || showTextLinkList) && <div
+                  className="wrap gap-element-horizontal-medium row row-center text-align-center"
+                >
+                  {showCopyright && <Text textContent={props.textContent} textSize={"Small"} />}
+                  {showTextLinkList && <TextLinkList items={props.textLinkListRows} />}
+                </div>}
               </div>)}
             </div>)}
           </div>)}
