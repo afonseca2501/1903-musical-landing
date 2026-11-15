@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "pages": {
+    "f6d862713abc4460989549c8e11ab604": {
+      "name": "Home",
+      "path": "app/page.tsx"
+    }
+  },
+  "sections": {
+    "a8dd33559bab4343845a04e85727a152": {
+      "component": "HomeHero",
+      "path": "components/home/hero.tsx"
+    },
+    "42f7033611c942f1b8303e819c6acc32": {
+      "component": "HomeFeature",
+      "path": "components/home/feature.tsx"
+    },
+    "e77391d880794bdd8926c73275433e73": {
+      "component": "HomeFeature2",
+      "path": "components/home/feature2.tsx"
+    },
+    "53da65d1229d47fa949e980271ed7082": {
+      "component": "HomeFeatureList",
+      "path": "components/home/feature-list.tsx"
+    },
+    "c0cae0ce8c584b8f957a618aef5bea62": {
+      "component": "HomeFaq",
+      "path": "components/home/faq.tsx"
+    },
+    "9bebc6de86584bf3a97f55779e085e04": {
+      "component": "HomeTeam",
+      "path": "components/home/team.tsx"
+    },
+    "4034d8a06fb040c3ac6993906188c29c": {
+      "component": "HomeCredibilityList",
+      "path": "components/home/credibility-list.tsx"
+    },
+    "d10e21d4377048e6a4a0d0b092a16971": {
+      "component": "GlobalFooter",
+      "path": "components/global/footer.tsx"
+    }
+  }
+}

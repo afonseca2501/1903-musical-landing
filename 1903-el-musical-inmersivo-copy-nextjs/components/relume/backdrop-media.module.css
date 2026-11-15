@@ -1,0 +1,16 @@
+.imageObjectPositionTopLeft { object-position: top left }
+.imageObjectPositionTopCenter { object-position: top }
+.imageObjectPositionTopRight { object-position: top right }
+.imageObjectPositionCenterLeft { object-position: left }
+.imageObjectPositionCenterRight { object-position: right }
+.imageObjectPositionBottomLeft { object-position: bottom left }
+.imageObjectPositionBottomCenter { object-position: bottom }
+.imageObjectPositionBottomRight { object-position: bottom right }
+.videoImageObjectPositionTopLeft { object-position: top left }
+.videoImageObjectPositionTopCenter { object-position: top }
+.videoImageObjectPositionTopRight { object-position: top right }
+.videoImageObjectPositionCenterLeft { object-position: left }
+.videoImageObjectPositionCenterRight { object-position: right }
+.videoImageObjectPositionBottomLeft { object-position: bottom left }
+.videoImageObjectPositionBottomCenter { object-position: bottom }
+.videoImageObjectPositionBottomRight { object-position: bottom right }

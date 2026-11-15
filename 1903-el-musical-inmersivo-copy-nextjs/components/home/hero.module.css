@@ -1,0 +1,24 @@
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.875rem);
+  }
+}
+
+.brandMark {
+  display: block;
+  width: min(72vw, 28rem);
+  height: auto;
+  margin-inline: auto;
+  animation: hero-float 4.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brandMark {
+    animation: none;
+  }
+}
