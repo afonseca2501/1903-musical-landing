@@ -9,6 +9,7 @@ import { HomeTeam } from "@/components/home/team";
 import { HomeMusicalProgram } from "@/components/home/musical-program";
 import { HomeNikkiDeRoy } from "@/components/home/nikki-de-roy";
 import { HomeCredibilityList } from "@/components/home/credibility-list";
+import { GlobalStickyNavbar } from "@/components/global/sticky-navbar";
 import { GlobalFooter } from "@/components/global/footer";
 
 export const metadata: Metadata = {
@@ -19,11 +20,12 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <GlobalStickyNavbar />
       <main id="main-content">
         <div id="hero-poster-y-fechas" className="page-section">
           <HomeHero backdropClass="bg-s188qb" />
         </div>
-        <div id="sinopsis-la-historia" className="page-section">
+        <div id="historia" className="page-section">
           <HomeFeature />
         </div>
         <div id="menu-de-comida" className="page-section">
@@ -32,16 +34,16 @@ export default function HomePage() {
         <div id="menu-de-bebidas" className="page-section">
           <HomeDrinksMenu />
         </div>
-        <div id="mapa-del-recinto" className="page-section">
+        <div id="mapa" className="page-section">
           <HomeFeature2 />
         </div>
-        <div id="ficha-tecnica-y-creditos" className="page-section">
+        <div id="ficha-tecnica" className="page-section">
           <HomeFaq />
         </div>
         <div id="elenco-estelar" className="page-section">
           <HomeTeam />
         </div>
-        <div id="programa-musical" className="page-section">
+        <div id="programa" className="page-section">
           <HomeMusicalProgram />
         </div>
         <div id="nikki-de-roy" className="page-section">

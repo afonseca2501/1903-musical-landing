@@ -1,0 +1,198 @@
+:global(html) {
+  scroll-padding-top: 4.75rem;
+}
+
+.bar {
+  --nav-neutral: #17120e;
+  --nav-oro: #b07b3e;
+  --nav-pergamino: #e4d5b7;
+  --nav-font: Inter, system-ui, sans-serif;
+  --nav-display: "Bodoni Moda", Georgia, serif;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  border-bottom: 1px solid color-mix(in srgb, var(--nav-oro) 35%, transparent);
+  background: color-mix(in srgb, var(--nav-neutral) 72%, transparent);
+  backdrop-filter: blur(16px) saturate(1.15);
+  -webkit-backdrop-filter: blur(16px) saturate(1.15);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.barHidden {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.barVisible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  max-width: var(--container-large, 80rem);
+  min-height: 3.75rem;
+  margin: 0 auto;
+  padding: 0.65rem var(--page-padding, 1.25rem);
+}
+
+.brand {
+  flex-shrink: 0;
+  color: var(--nav-pergamino);
+  font-family: var(--nav-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.brand:focus-visible {
+  outline: 2px solid var(--nav-oro);
+  outline-offset: 3px;
+}
+
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.7rem;
+  border-radius: 0.35rem;
+  color: color-mix(in srgb, var(--nav-pergamino) 88%, transparent);
+  font-family: var(--nav-font);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--nav-oro);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--nav-oro);
+  outline-offset: 2px;
+}
+
+.menuButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--nav-oro) 40%, transparent);
+  border-radius: 0.35rem;
+  background: color-mix(in srgb, var(--nav-neutral) 40%, transparent);
+  color: var(--nav-pergamino);
+  cursor: pointer;
+}
+
+.menuButton:focus-visible {
+  outline: 2px solid var(--nav-oro);
+  outline-offset: 2px;
+}
+
+.menuIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1.15rem;
+  height: 0.85rem;
+}
+
+.menuIcon span {
+  display: block;
+  height: 1.5px;
+  width: 100%;
+  border-radius: 1px;
+  background: currentColor;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  transform-origin: center;
+}
+
+.menuOpen .menuIcon span:nth-child(1) {
+  transform: translateY(0.35rem) rotate(45deg);
+}
+
+.menuOpen .menuIcon span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuOpen .menuIcon span:nth-child(3) {
+  transform: translateY(-0.35rem) rotate(-45deg);
+}
+
+.mobilePanel {
+  display: none;
+  border-top: 1px solid color-mix(in srgb, var(--nav-oro) 28%, transparent);
+  background: color-mix(in srgb, var(--nav-neutral) 94%, transparent);
+  backdrop-filter: blur(18px) saturate(1.1);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
+  padding: 0.75rem var(--page-padding, 1.25rem) 1.15rem;
+}
+
+.mobilePanelOpen {
+  display: block;
+}
+
+.mobileList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobileLink {
+  display: block;
+  padding: 0.85rem 0.35rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--nav-oro) 18%, transparent);
+  color: var(--nav-pergamino);
+  font-family: var(--nav-font);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.mobileLink:hover {
+  color: var(--nav-oro);
+}
+
+@media (min-width: 992px) {
+  .inner {
+    min-height: 4.25rem;
+  }
+
+  .desktopNav {
+    display: flex;
+  }
+
+  .menuButton,
+  .mobilePanel,
+  .mobilePanelOpen {
+    display: none;
+  }
+}

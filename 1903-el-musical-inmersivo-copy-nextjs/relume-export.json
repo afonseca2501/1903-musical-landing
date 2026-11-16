@@ -47,6 +47,10 @@
       "component": "HomeCredibilityList",
       "path": "components/home/credibility-list.tsx"
     },
+    "e9f0a1b2c3d44566778899aabbccddee": {
+      "component": "GlobalStickyNavbar",
+      "path": "components/global/sticky-navbar.tsx"
+    },
     "d10e21d4377048e6a4a0d0b092a16971": {
       "component": "GlobalFooter",
       "path": "components/global/footer.tsx"
