@@ -51,13 +51,13 @@ export function FaqItemAccordion(props: FaqItemAccordionProps) {
             <Text
               textContent={faqQuestion}
               textWeight={"Strong"}
-              textSize={"Medium"}
+              textSize={"Regular"}
             />
           </> : <>
             <Text
               textContent={faqQuestion}
               textWeight={"Strong"}
-              textSize={"Medium"}
+              textSize={"Regular"}
             />
             <div
               className="faq-icon-toggle"
