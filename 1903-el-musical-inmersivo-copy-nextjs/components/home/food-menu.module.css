@@ -100,6 +100,21 @@
   line-height: 1.35;
 }
 
+.location {
+  margin: 0;
+  color: color-mix(in srgb, var(--scheme-text-muted, #aaa) 95%, transparent);
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.description {
+  margin: 0;
+  color: var(--scheme-text, rgba(255, 255, 255, 0.78));
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
 .meta {
   display: flex;
   flex-wrap: wrap;

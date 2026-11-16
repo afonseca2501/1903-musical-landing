@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { HomeHero } from "@/components/home/hero";
 import { HomeFeature } from "@/components/home/feature";
 import { HomeFoodMenu } from "@/components/home/food-menu";
+import { HomeDrinksMenu } from "@/components/home/drinks-menu";
 import { HomeFeature2 } from "@/components/home/feature2";
 import { HomeFaq } from "@/components/home/faq";
 import { HomeTeam } from "@/components/home/team";
@@ -25,6 +26,9 @@ export default function HomePage() {
         </div>
         <div id="menu-de-comida" className="page-section">
           <HomeFoodMenu />
+        </div>
+        <div id="menu-de-bebidas" className="page-section">
+          <HomeDrinksMenu />
         </div>
         <div id="mapa-del-recinto" className="page-section">
           <HomeFeature2 />

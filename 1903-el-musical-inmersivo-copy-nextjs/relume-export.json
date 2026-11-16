@@ -23,6 +23,10 @@
       "component": "HomeFoodMenu",
       "path": "components/home/food-menu.tsx"
     },
+    "a1b2c3d4e5f64789a0b1c2d3e4f5a6b7": {
+      "component": "HomeDrinksMenu",
+      "path": "components/home/drinks-menu.tsx"
+    },
     "c0cae0ce8c584b8f957a618aef5bea62": {
       "component": "HomeFaq",
       "path": "components/home/faq.tsx"
