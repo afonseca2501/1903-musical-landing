@@ -35,6 +35,10 @@
       "component": "HomeTeam",
       "path": "components/home/team.tsx"
     },
+    "b7e4a91c2f5840d9a6c3e1f8d0b2a547": {
+      "component": "HomeMusicalProgram",
+      "path": "components/home/musical-program.tsx"
+    },
     "4034d8a06fb040c3ac6993906188c29c": {
       "component": "HomeCredibilityList",
       "path": "components/home/credibility-list.tsx"

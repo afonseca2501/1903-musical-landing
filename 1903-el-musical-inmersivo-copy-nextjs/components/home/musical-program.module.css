@@ -1,0 +1,165 @@
+.section {
+  --brand-neutral: #17120e;
+  --brand-oro: #b07b3e;
+  --brand-rojo: #af2429;
+  --brand-pergamino: #e4d5b7;
+  --brand-sepia: #6e4b30;
+  --brand-font-display: "Bodoni Moda", Georgia, serif;
+  --brand-font-body: Inter, system-ui, sans-serif;
+  --brand-hairline: color-mix(in srgb, var(--brand-oro) 30%, transparent);
+  --brand-text-muted: color-mix(in srgb, var(--brand-pergamino) 70%, transparent);
+
+  width: 100%;
+  background-color: var(--brand-neutral);
+  color: var(--brand-pergamino);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 42rem;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--brand-sepia);
+  font-family: var(--brand-font-body);
+  font-size: var(--text-small-size, 0.875rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  line-height: var(--text-small-line-height, 1.4);
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: var(--brand-pergamino);
+  font-family: var(--brand-font-display);
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.08;
+}
+
+.intro {
+  margin: 0;
+  color: var(--brand-text-muted);
+  font-family: var(--brand-font-body);
+  font-size: var(--text-regular-size, 1rem);
+  font-weight: 400;
+  letter-spacing: var(--text-letter-spacing, 0);
+  line-height: var(--text-regular-line-height, 1.6);
+  text-wrap: pretty;
+}
+
+.acts {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 6vw, 3.75rem);
+}
+
+.act {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.actTitle {
+  margin: 0;
+  color: var(--brand-pergamino);
+  font-family: var(--brand-font-display);
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+
+.songList {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--brand-hairline);
+}
+
+.song {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: 0.75rem 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--brand-hairline);
+}
+
+.songCierre .number {
+  color: var(--brand-rojo);
+}
+
+.number {
+  margin: 0;
+  color: var(--brand-oro);
+  font-family: var(--brand-font-body);
+  font-size: var(--text-regular-size, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: var(--text-regular-line-height, 1.5);
+  font-variant-numeric: tabular-nums;
+  transition: color 0.2s ease;
+}
+
+.songBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.songTitle {
+  margin: 0;
+  color: var(--brand-pergamino);
+  font-family: var(--brand-font-display);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+}
+
+.credits {
+  margin: 0;
+  color: var(--brand-text-muted);
+  font-family: var(--brand-font-body);
+  font-size: var(--text-small-size, 0.875rem);
+  font-weight: 400;
+  letter-spacing: var(--text-letter-spacing, 0);
+  line-height: var(--text-small-line-height, 1.5);
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+
+@media (min-width: 992px) {
+  .acts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+}
+
+@media (hover: hover) {
+  .song:hover .number {
+    color: color-mix(in srgb, var(--brand-oro) 85%, #fff);
+  }
+
+  .song:hover .songTitle {
+    color: #fff8ec;
+  }
+
+  .songCierre:hover .number {
+    color: color-mix(in srgb, var(--brand-rojo) 80%, #fff);
+  }
+}

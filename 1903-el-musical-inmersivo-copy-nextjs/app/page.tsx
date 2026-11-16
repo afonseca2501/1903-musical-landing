@@ -6,6 +6,7 @@ import { HomeDrinksMenu } from "@/components/home/drinks-menu";
 import { HomeFeature2 } from "@/components/home/feature2";
 import { HomeFaq } from "@/components/home/faq";
 import { HomeTeam } from "@/components/home/team";
+import { HomeMusicalProgram } from "@/components/home/musical-program";
 import { HomeCredibilityList } from "@/components/home/credibility-list";
 import { GlobalFooter } from "@/components/global/footer";
 
@@ -38,6 +39,9 @@ export default function HomePage() {
         </div>
         <div id="elenco-estelar" className="page-section">
           <HomeTeam />
+        </div>
+        <div id="programa-musical" className="page-section">
+          <HomeMusicalProgram />
         </div>
         <div id="patrocinadores" className="page-section">
           <HomeCredibilityList />
