@@ -10,6 +10,7 @@ export function HomeFaq(props: { backdropClass?: string }) {
       headingText={<>Quién hace posible 1903</>}
       sectionScheme={"scheme-1"}
       sectionRole={"Section"}
+      backdropClass={["section-pad-top-tight", props.backdropClass].filter(Boolean).join(" ")}
       showSectionContentBlock={true}
       paragraphText={<>
       El equipo creativo y técnico detrás de la producción, más los doce músicos que tocan en vivo cada función.
@@ -200,7 +201,6 @@ export function HomeFaq(props: { backdropClass?: string }) {
     </> }]}
       showSectionCtaBlock={false}
       buttonsRows={[{ buttonHierarchy: "Secondary", buttonHasLeadingIcon: false, buttonHasTrailingIcon: false }]}
-      backdropClass={props.backdropClass}
     />
   );
 }

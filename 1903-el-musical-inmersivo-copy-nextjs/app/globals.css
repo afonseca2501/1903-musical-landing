@@ -987,6 +987,7 @@ body {
 .section-100vh { align-items: center; max-height: 60rem; min-height: 100svh }
 
 .section-padding-bottom-0 { padding-bottom: 0rem }
+.section.section-pad-top-tight { padding-top: calc(var(--section-padding-small) + var(--navbar-offset, 0rem)) }
 
 .full-width { width: 100% }
 
