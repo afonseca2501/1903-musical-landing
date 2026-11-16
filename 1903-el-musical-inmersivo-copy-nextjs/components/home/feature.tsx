@@ -1,9 +1,9 @@
 "use client";
 
 import { Reveal } from "@/components/Reveal";
-import { Media } from "@/components/relume/media";
 import { IconList } from "@/components/relume/icon-list";
 import { FeatureSectionMediaHorizontal } from "@/components/relume/feature-section-media-horizontal";
+import { HistoriaVideoSequence } from "@/components/home/historia-video-sequence";
 
 export function HomeFeature(props: { backdropClass?: string }) {
   return (
@@ -13,13 +13,16 @@ export function HomeFeature(props: { backdropClass?: string }) {
         columnRatio={"1:1"}
         sectionPadding={"Top & Bottom"}
         assetHorizontalPosition={"Right"}
-        headingText={<>La noche en que nació la República</>}
+        headingText={<>La historia no solo se cuenta. Se vive.</>}
         paragraphText={<>
         <p className="rt-paragraph">
-          Noviembre de 1903. Panamá lleva medio siglo intentando separarse de Colombia y una noticia desde Washington lo acelera todo: el canal ya no se hará en Nicaragua. En una sola noche se cruzan el médico que conspira desde hace años, el general que se niega a disparar contra su pueblo y el ingeniero francés que firma un tratado en un hotel de Nueva York.
+          De las páginas de Con ardientes fulgores de gloria, de Juan David Morgan, al guion de Diego de Obaldía y las tablas del Teatro Nacional de Panamá… hoy nuestra historia cobra vida de una manera nunca antes vista. Bienvenidos a 1903: La Experiencia Inmersiva. Un viaje para descubrir, sentir y saborear los acontecimientos que nos convirtieron en República; una celebración de nuestras raíces y de las culturas que se encontraron en nuestra tierra. Esta vez, no solo serás testigo de la historia. Serás parte de ella.
         </p>
         <p className="rt-paragraph">
-          La República nace, y nadie sale igual. 1903 lleva esa noche al escenario con música original en vivo, 33 intérpretes y un mercado inmersivo que se recorre antes de entrar a la sala.
+          <strong>Cómo vivir la experiencia</strong>
+        </p>
+        <p className="rt-paragraph">
+          Recorre todos los pabellones: cada uno reúne historias, sabores y actividades inspiradas en una ciudad vinculada con el nacimiento de la República. Come Coco Kitchen by La Tapa del Coco ha creado platos especiales para este recorrido.
         </p>
       </>}
         showTagline={true}
@@ -34,14 +37,7 @@ export function HomeFeature(props: { backdropClass?: string }) {
         buttonGroupRows={[{ buttonHierarchy: "Secondary", buttonHasLeadingIcon: false, buttonHasTrailingIcon: false }]}
         mediaSlot={
           <Reveal delay={0.15}>
-            <Media
-              imageObjectPosition={"Center"}
-              mediaWidth={"100%"}
-              aspectRatio={"Classic Landscape"}
-              mediaType={"Image"}
-              imageSource={"/assets/7fc99183-1c51-42c2-912e-20291a573ac5.jpg"}
-              placeholderType={"Photography"}
-            />
+            <HistoriaVideoSequence />
           </Reveal>
         }
         backdropClass={props.backdropClass}
