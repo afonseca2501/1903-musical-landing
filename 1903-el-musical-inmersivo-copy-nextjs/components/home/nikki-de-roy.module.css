@@ -1,0 +1,187 @@
+.section {
+  --brand-neutral: #17120e;
+  --brand-oro: #b07b3e;
+  --brand-pergamino: #e4d5b7;
+  --brand-sepia: #6e4b30;
+  --brand-font-display: "Bodoni Moda", Georgia, serif;
+  --brand-font-body: Inter, system-ui, sans-serif;
+  --brand-hairline: color-mix(in srgb, var(--brand-oro) 40%, transparent);
+  --brand-text-body: var(--brand-sepia);
+
+  width: 100%;
+  background-color: var(--brand-pergamino);
+  color: var(--brand-neutral);
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5vw, 3rem);
+  align-items: center;
+}
+
+.revealFull {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.portraitCol {
+  width: 100%;
+  max-width: 22rem;
+  flex-shrink: 0;
+}
+
+.portraitFrame {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--brand-oro);
+  background:
+    linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--brand-sepia) 45%, var(--brand-neutral)) 0%,
+      color-mix(in srgb, var(--brand-neutral) 78%, var(--brand-sepia)) 100%
+    );
+}
+
+.portraitPlaceholder {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at 40% 30%,
+      color-mix(in srgb, var(--brand-oro) 22%, transparent) 0%,
+      transparent 55%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--brand-sepia) 40%, transparent) 0%,
+      color-mix(in srgb, var(--brand-neutral) 35%, transparent) 100%
+    );
+  filter: sepia(0.4) saturate(0.8) brightness(0.95);
+}
+
+.narrativeCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 36rem;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--brand-oro);
+  font-family: var(--brand-font-body);
+  font-size: var(--text-small-size, 0.875rem);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: var(--text-small-line-height, 1.4);
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: var(--brand-neutral);
+  font-family: var(--brand-font-display);
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  margin: 0.5rem 0 0;
+}
+
+.paragraph {
+  margin: 0;
+  color: var(--brand-text-body);
+  font-family: var(--brand-font-body);
+  font-size: var(--text-regular-size, 1rem);
+  font-weight: 400;
+  letter-spacing: var(--text-letter-spacing, 0);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.closing {
+  margin: 0.75rem 0 0;
+  color: var(--brand-neutral);
+  font-family: var(--brand-font-display);
+  font-size: clamp(1.25rem, 2.8vw, 1.65rem);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.foundation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--brand-hairline);
+}
+
+.logoSlot {
+  width: min(100%, 12rem);
+  height: 3.5rem;
+  border: 1px solid var(--brand-oro);
+  background: color-mix(in srgb, var(--brand-sepia) 10%, transparent);
+}
+
+.foundationNote {
+  margin: 0;
+  color: var(--brand-text-body);
+  font-family: var(--brand-font-body);
+  font-size: var(--text-small-size, 0.875rem);
+  font-weight: 400;
+  letter-spacing: var(--text-letter-spacing, 0);
+  line-height: 1.55;
+  text-wrap: pretty;
+  max-width: 28rem;
+}
+
+@media (min-width: 992px) {
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(14rem, 22rem) minmax(0, 1fr);
+    gap: clamp(2.5rem, 5vw, 4.5rem);
+    align-items: center;
+  }
+
+  .revealFull {
+    display: block;
+    width: 100%;
+  }
+
+  .portraitCol {
+    width: 100%;
+    max-width: none;
+  }
+
+  .narrativeCol {
+    max-width: 34rem;
+    text-align: left;
+    justify-self: start;
+  }
+
+  .foundation {
+    align-items: flex-start;
+  }
+
+  .foundationNote {
+    text-align: left;
+  }
+}

@@ -7,6 +7,7 @@ import { HomeFeature2 } from "@/components/home/feature2";
 import { HomeFaq } from "@/components/home/faq";
 import { HomeTeam } from "@/components/home/team";
 import { HomeMusicalProgram } from "@/components/home/musical-program";
+import { HomeNikkiDeRoy } from "@/components/home/nikki-de-roy";
 import { HomeCredibilityList } from "@/components/home/credibility-list";
 import { GlobalFooter } from "@/components/global/footer";
 
@@ -42,6 +43,9 @@ export default function HomePage() {
         </div>
         <div id="programa-musical" className="page-section">
           <HomeMusicalProgram />
+        </div>
+        <div id="nikki-de-roy" className="page-section">
+          <HomeNikkiDeRoy />
         </div>
         <div id="patrocinadores" className="page-section">
           <HomeCredibilityList />

@@ -39,6 +39,10 @@
       "component": "HomeMusicalProgram",
       "path": "components/home/musical-program.tsx"
     },
+    "c8f1a2b3d4e5567890abcdef12345678": {
+      "component": "HomeNikkiDeRoy",
+      "path": "components/home/nikki-de-roy.tsx"
+    },
     "4034d8a06fb040c3ac6993906188c29c": {
       "component": "HomeCredibilityList",
       "path": "components/home/credibility-list.tsx"
