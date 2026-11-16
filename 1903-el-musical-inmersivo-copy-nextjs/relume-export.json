@@ -20,8 +20,8 @@
       "path": "components/home/feature2.tsx"
     },
     "53da65d1229d47fa949e980271ed7082": {
-      "component": "HomeFeatureList",
-      "path": "components/home/feature-list.tsx"
+      "component": "HomeFoodMenu",
+      "path": "components/home/food-menu.tsx"
     },
     "c0cae0ce8c584b8f957a618aef5bea62": {
       "component": "HomeFaq",

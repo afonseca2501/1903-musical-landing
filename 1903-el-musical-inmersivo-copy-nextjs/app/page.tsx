@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { HomeHero } from "@/components/home/hero";
 import { HomeFeature } from "@/components/home/feature";
+import { HomeFoodMenu } from "@/components/home/food-menu";
 import { HomeFeature2 } from "@/components/home/feature2";
-import { HomeFeatureList } from "@/components/home/feature-list";
 import { HomeFaq } from "@/components/home/faq";
 import { HomeTeam } from "@/components/home/team";
 import { HomeCredibilityList } from "@/components/home/credibility-list";
@@ -23,11 +23,11 @@ export default function HomePage() {
         <div id="sinopsis-la-historia" className="page-section">
           <HomeFeature />
         </div>
+        <div id="menu-de-comida" className="page-section">
+          <HomeFoodMenu />
+        </div>
         <div id="mapa-del-recinto" className="page-section">
           <HomeFeature2 />
-        </div>
-        <div id="menu" className="page-section">
-          <HomeFeatureList />
         </div>
         <div id="ficha-tecnica-y-creditos" className="page-section">
           <HomeFaq />
