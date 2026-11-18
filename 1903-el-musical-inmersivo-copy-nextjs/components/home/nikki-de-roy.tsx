@@ -52,11 +52,15 @@ export function HomeNikkiDeRoy(props: { backdropClass?: string }) {
                 </p>
 
                 <div className={styles.foundation}>
-                  <div
-                    className={styles.logoSlot}
-                    role="img"
-                    aria-label="Espacio para el logotipo de la Fundación Nikki de Roy"
-                  />
+                  <div className={styles.logoSlot}>
+                    <img
+                      className={styles.logoImage}
+                      src="/assets/FundacionNikki.webp"
+                      alt="Logotipo de la Fundación Nikki de Roy"
+                      width={320}
+                      height={120}
+                    />
+                  </div>
                   <p className={styles.foundationNote}>
                     1903: La Experiencia Inmersiva se presenta a beneficio de la
                     Fundación Nikki de Roy.

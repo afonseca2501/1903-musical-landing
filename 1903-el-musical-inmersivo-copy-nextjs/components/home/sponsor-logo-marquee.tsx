@@ -7,6 +7,17 @@ import {
 } from "@/lib/sponsor-logos";
 import styles from "./sponsor-logo-marquee.module.css";
 
+function logoImageClass(logo: SponsorLogo): string {
+  if (logo.shape === "horizontal") {
+    return logo.scale === "prominent"
+      ? styles.imgHorizontalProminent
+      : styles.imgHorizontal;
+  }
+  return logo.scale === "prominent"
+    ? styles.imgCompactProminent
+    : styles.imgCompact;
+}
+
 function LogoStack({
   logos,
   keyPrefix,
@@ -18,7 +29,13 @@ function LogoStack({
     <>
       {logos.map((logo, index) => (
         <div key={`${keyPrefix}-${index}`} className={styles.logo}>
-          <img src={logo.src} alt={logo.alt} loading="lazy" decoding="async" />
+          <img
+            className={logoImageClass(logo)}
+            src={logo.src}
+            alt={logo.alt}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       ))}
     </>

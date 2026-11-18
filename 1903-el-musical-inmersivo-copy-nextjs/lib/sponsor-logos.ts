@@ -1,6 +1,11 @@
+export type SponsorLogoShape = "horizontal" | "compact";
+export type SponsorLogoScale = "default" | "prominent";
+
 export type SponsorLogo = {
   src: string;
   alt: string;
+  shape: SponsorLogoShape;
+  scale: SponsorLogoScale;
 };
 
 function logoPath(filename: string, folder = "logos") {
@@ -15,15 +20,15 @@ function altFromFilename(filename: string) {
     "BUDGET.webp": "Budget",
     "EVENTOS & EVENTOS.webp": "Eventos & Eventos",
     "Global Bank.webp": "Global Bank",
-    "LOGO FONDO TRANSPARENTE.webp": "Aliado",
+    "LOGO FONDO TRANSPARENTE.webp": "Fundación Nikki de Roy",
     "LOGO_TAD_TRANSPARENTE.webp": "TAD",
-    "LTDC.webp": "LTDC",
-    "Logo horizontal.webp": "Aliado",
-    "LogoMuseo01-A.webp": "Museo",
+    "LTDC.webp": "La Tapa del Coco",
+    "Logo horizontal.webp": "Aliado institucional",
+    "LogoMuseo01-A.webp": "Museo del Casco Antiguo",
     "LogoOldParrOscuro.webp": "Old Parr",
     "Meeting-&-show-.webp": "Meeting & Show",
     "Momi.webp": "Momi",
-    "PHOTO-2026-10-30-08-43-03.webp": "Aliado",
+    "PHOTO-2026-10-30-08-43-03.webp": "Aliado institucional",
     "RIGSA_Logo_Positivo.webp": "RIGSA",
     "bonlac.webp": "Bonlac",
     "oro-de-cana.webp": "Oro de Caña",
@@ -39,6 +44,38 @@ function altFromFilename(filename: string) {
     .replace(/[_-]+/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+/** Compact / square / vertical marks — sized by max-height. */
+const COMPACT_LOGO_FILES = new Set([
+  "LOGO FONDO TRANSPARENTE.webp",
+  "LOGO_TAD_TRANSPARENTE.webp",
+  "LTDC.webp",
+  "Logo horizontal.webp",
+  "LogoMuseo01-A.webp",
+]);
+
+/**
+ * Logos that read too small at the default scale — bump presence.
+ * Compact → taller (h-16 / h-20). Horizontal → wider (w-40 / w-48).
+ */
+const PROMINENT_LOGO_FILES = new Set([
+  "ATP.webp",
+  "Global Bank.webp",
+  "LOGO FONDO TRANSPARENTE.webp",
+  "LOGO_TAD_TRANSPARENTE.webp",
+  "LTDC.webp",
+  "Logo horizontal.webp",
+  "LogoMuseo01-A.webp",
+  "PHOTO-2026-10-30-08-43-03.webp",
+]);
+
+function shapeFromFilename(filename: string): SponsorLogoShape {
+  return COMPACT_LOGO_FILES.has(filename) ? "compact" : "horizontal";
+}
+
+function scaleFromFilename(filename: string): SponsorLogoScale {
+  return PROMINENT_LOGO_FILES.has(filename) ? "prominent" : "default";
 }
 
 /** Sponsor / ally logos in `public/assets/logos` (excludes `produce/`). */
@@ -72,11 +109,15 @@ const PRODUCE_LOGO_FILES = [
 export const SPONSOR_LOGOS: SponsorLogo[] = SPONSOR_LOGO_FILES.map((filename) => ({
   src: logoPath(filename),
   alt: altFromFilename(filename),
+  shape: shapeFromFilename(filename),
+  scale: scaleFromFilename(filename),
 }));
 
 export const PRODUCE_LOGOS: SponsorLogo[] = PRODUCE_LOGO_FILES.map((filename) => ({
   src: logoPath(`produce/${filename}`),
   alt: altFromFilename(filename),
+  shape: "horizontal" as const,
+  scale: "default" as const,
 }));
 
 /** Split logos across N columns for a multi-track vertical marquee. */

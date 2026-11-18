@@ -21,8 +21,14 @@ export function HomeDrinksMenu(props: { backdropClass?: string }) {
             {DRINKS_BARS.map((bar, index) => (
               <Reveal key={bar.id} delay={0.06 * index}>
                 <article className={styles.card}>
-                  <div className={styles.photoSlot} aria-hidden="true">
-                    <span className={styles.photoHint}>Foto próximamente</span>
+                  <div className={`${styles.photoSlot} ${styles.photoFilled}`}>
+                    <img
+                      className={styles.photoImage}
+                      src={encodeURI(bar.imageSource)}
+                      alt={bar.name}
+                      width={1200}
+                      height={900}
+                    />
                   </div>
                   <h3 className={styles.dishName}>{bar.name}</h3>
                   <p className={styles.location}>{bar.location}</p>

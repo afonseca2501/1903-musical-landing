@@ -37,7 +37,7 @@ export function HomeFeature2(props: { backdropClass?: string }) {
               mediaWidth={"100%"}
               aspectRatio={"Auto"}
               mediaType={"Image"}
-              imageSource={"/assets/f3d870ec-cc88-4a87-8baf-110bf69efb6d.jpg"}
+              imageSource={"/assets/mapa.webp"}
               placeholderType={"Diagram"}
             />
           </Reveal>

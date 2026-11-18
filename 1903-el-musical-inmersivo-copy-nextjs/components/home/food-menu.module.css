@@ -86,6 +86,20 @@
   );
 }
 
+.photoFilled {
+  border-style: solid;
+  border-color: color-mix(in srgb, var(--scheme-border, #444) 80%, transparent);
+  background: #0d0d0d;
+}
+
+.photoImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .photoHint {
   color: color-mix(in srgb, var(--scheme-text-muted, #999) 85%, transparent);
   font-size: 0.75rem;

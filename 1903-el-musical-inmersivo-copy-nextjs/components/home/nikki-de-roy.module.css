@@ -11,6 +11,8 @@
   width: 100%;
   background-color: var(--brand-pergamino);
   color: var(--brand-neutral);
+  /* Tighten gap before patrocinadores */
+  padding-bottom: var(--section-padding-small, 3rem);
 }
 
 .layout {
@@ -115,17 +117,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin-top: 0.75rem;
-  padding-top: 1.5rem;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+  padding-top: 0.85rem;
   border-top: 1px solid var(--brand-hairline);
 }
 
 .logoSlot {
-  width: min(100%, 12rem);
-  height: 3.5rem;
-  border: 1px solid var(--brand-oro);
-  background: color-mix(in srgb, var(--brand-sepia) 10%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 32rem);
+  line-height: 0;
+}
+
+.logoImage {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 16.875rem;
+  object-fit: contain;
+  object-position: center;
 }
 
 .foundationNote {
