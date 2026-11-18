@@ -39,6 +39,8 @@ export function HomeFeature2(props: { backdropClass?: string }) {
               mediaType={"Image"}
               imageSource={"/assets/mapa.webp"}
               placeholderType={"Diagram"}
+              alt="Mapa del recinto"
+              sizes="(max-width: 991px) 100vw, 50vw"
             />
           </Reveal>
         }

@@ -6,8 +6,8 @@
   --nav-neutral: #17120e;
   --nav-oro: #b07b3e;
   --nav-pergamino: #e4d5b7;
-  --nav-font: Inter, system-ui, sans-serif;
-  --nav-display: "Bodoni Moda", Georgia, serif;
+  --nav-font: var(--font-family-body);
+  --nav-display: var(--font-family-heading);
 
   position: fixed;
   top: 0;

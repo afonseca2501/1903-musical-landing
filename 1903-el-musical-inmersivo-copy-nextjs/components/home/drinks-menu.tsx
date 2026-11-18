@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
 import { DRINKS_BARS, DRINKS_MENU_INTRO } from "@/lib/drinks-menu";
 import styles from "./food-menu.module.css";
@@ -22,12 +23,12 @@ export function HomeDrinksMenu(props: { backdropClass?: string }) {
               <Reveal key={bar.id} delay={0.06 * index}>
                 <article className={styles.card}>
                   <div className={`${styles.photoSlot} ${styles.photoFilled}`}>
-                    <img
+                    <Image
                       className={styles.photoImage}
-                      src={encodeURI(bar.imageSource)}
+                      src={bar.imageSource}
                       alt={bar.name}
-                      width={1200}
-                      height={900}
+                      fill
+                      sizes="(max-width: 991px) 100vw, 33vw"
                     />
                   </div>
                   <h3 className={styles.dishName}>{bar.name}</h3>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Tagline } from "@/components/relume/tagline";
 import { ButtonGroup } from "@/components/relume/button-group";
 import { HeroHeaderMediaBackdropCenter } from "@/components/relume/hero-header-media-backdrop-center";
@@ -25,10 +26,14 @@ export function HomeHero(props: { backdropClass?: string }) {
       showContentTop={true}
       showHeading={true}
       headingText={
-        <img
+        <Image
           className={styles.brandMark}
           src="/assets/1903.webp"
           alt="1903"
+          width={896}
+          height={320}
+          priority
+          sizes="(max-width: 768px) 72vw, 28rem"
         />
       }
       showEyebrowWrapper={true}

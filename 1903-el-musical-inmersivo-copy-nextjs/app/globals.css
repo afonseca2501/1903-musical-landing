@@ -135,8 +135,8 @@ body {
   --scheme1-border: var(--color-dark-a15);
   --scheme1-accent-subtle: color-mix(in srgb, var(--scheme-accent) 12%, transparent);
   --scheme1-text-muted: var(--color-dark-a50);
-  --font-family-heading: Inter;
-  --font-family-body: Inter;
+  --font-family-heading: var(--font-bodoni, "Bodoni Moda"), Georgia, serif;
+  --font-family-body: var(--font-inter, Inter), system-ui, sans-serif;
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -3005,8 +3005,8 @@ tbody:last-of-type tr:last-child > &:is([class^="scheme-"], [class*=" scheme-"])
 }
 :root {
   font-synthesis-weight: none;
-  --font-family-heading: "Bodoni Moda", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-family-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-heading: var(--font-bodoni, "Bodoni Moda"), Georgia, serif;
+  --font-family-body: var(--font-inter, Inter), system-ui, sans-serif;
   --heading-h1-size: 4rem;
   --heading-h2-size: 3.25rem;
   --heading-h3-size: 2.5rem;

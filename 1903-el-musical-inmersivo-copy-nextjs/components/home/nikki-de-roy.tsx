@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
 import styles from "./nikki-de-roy.module.css";
 
@@ -21,12 +22,12 @@ export function HomeNikkiDeRoy(props: { backdropClass?: string }) {
             <Reveal className={styles.revealFull} delay={0.06}>
               <div className={styles.portraitCol}>
                 <div className={styles.portraitFrame}>
-                  <img
+                  <Image
                     className={styles.portraitImage}
                     src="/assets/NIKKI.webp"
                     alt="Retrato de Nikki de Roy"
-                    width={900}
-                    height={1200}
+                    fill
+                    sizes="(max-width: 991px) 88vw, 22rem"
                   />
                 </div>
               </div>
@@ -53,12 +54,13 @@ export function HomeNikkiDeRoy(props: { backdropClass?: string }) {
 
                 <div className={styles.foundation}>
                   <div className={styles.logoSlot}>
-                    <img
+                    <Image
                       className={styles.logoImage}
                       src="/assets/FundacionNikki.webp"
                       alt="Logotipo de la Fundación Nikki de Roy"
-                      width={320}
-                      height={120}
+                      width={640}
+                      height={240}
+                      sizes="(max-width: 991px) 80vw, 32rem"
                     />
                   </div>
                   <p className={styles.foundationNote}>

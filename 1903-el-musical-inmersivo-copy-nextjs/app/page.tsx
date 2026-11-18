@@ -1,20 +1,45 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { HomeHero } from "@/components/home/hero";
-import { HomeFeature } from "@/components/home/feature";
-import { HomeFoodMenu } from "@/components/home/food-menu";
-import { HomeDrinksMenu } from "@/components/home/drinks-menu";
-import { HomeFeature2 } from "@/components/home/feature2";
-import { HomeFaq } from "@/components/home/faq";
-import { HomeTeam } from "@/components/home/team";
-import { HomeMusicalProgram } from "@/components/home/musical-program";
-import { HomeNikkiDeRoy } from "@/components/home/nikki-de-roy";
-import { HomeCredibilityList } from "@/components/home/credibility-list";
 import { GlobalStickyNavbar } from "@/components/global/sticky-navbar";
-import { GlobalFooter } from "@/components/global/footer";
+
+const HomeFeature = dynamic(() =>
+  import("@/components/home/feature").then((m) => m.HomeFeature),
+);
+const HomeFoodMenu = dynamic(() =>
+  import("@/components/home/food-menu").then((m) => m.HomeFoodMenu),
+);
+const HomeDrinksMenu = dynamic(() =>
+  import("@/components/home/drinks-menu").then((m) => m.HomeDrinksMenu),
+);
+const HomeFeature2 = dynamic(() =>
+  import("@/components/home/feature2").then((m) => m.HomeFeature2),
+);
+const HomeFaq = dynamic(() =>
+  import("@/components/home/faq").then((m) => m.HomeFaq),
+);
+const HomeTeam = dynamic(() =>
+  import("@/components/home/team").then((m) => m.HomeTeam),
+);
+const HomeMusicalProgram = dynamic(() =>
+  import("@/components/home/musical-program").then((m) => m.HomeMusicalProgram),
+);
+const HomeNikkiDeRoy = dynamic(() =>
+  import("@/components/home/nikki-de-roy").then((m) => m.HomeNikkiDeRoy),
+);
+const HomeCredibilityList = dynamic(() =>
+  import("@/components/home/credibility-list").then(
+    (m) => m.HomeCredibilityList,
+  ),
+);
+const GlobalFooter = dynamic(() =>
+  import("@/components/global/footer").then((m) => m.GlobalFooter),
+);
 
 export const metadata: Metadata = {
   title: "1903: El Musical Inmersivo | Islas de Atlapa, Panamá",
-  description: "La historia de Panamá cantada con flow moderno. Del 23 de noviembre al 2 de diciembre de 2026 en Islas de Atlapa. Entradas en Panatickets.",
+  description:
+    "La historia de Panamá cantada con flow moderno. Del 23 de noviembre al 2 de diciembre de 2026 en Islas de Atlapa. Entradas en Panatickets.",
 };
 
 export default function HomePage() {

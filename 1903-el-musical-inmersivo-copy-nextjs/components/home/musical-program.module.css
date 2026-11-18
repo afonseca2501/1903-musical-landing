@@ -4,8 +4,8 @@
   --brand-rojo: #af2429;
   --brand-pergamino: #e4d5b7;
   --brand-sepia: #6e4b30;
-  --brand-font-display: "Bodoni Moda", Georgia, serif;
-  --brand-font-body: Inter, system-ui, sans-serif;
+  --brand-font-display: var(--font-family-heading);
+  --brand-font-body: var(--font-family-body);
   --brand-hairline: color-mix(in srgb, var(--brand-oro) 30%, transparent);
   --brand-text-muted: color-mix(in srgb, var(--brand-pergamino) 70%, transparent);
 

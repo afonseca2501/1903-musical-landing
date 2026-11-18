@@ -15,14 +15,14 @@ export const DRINKS_BARS: DrinksBar[] = [
     name: "Barra principal",
     location: "Bogotá",
     description: "Menú general de bebidas.",
-    imageSource: "/assets/bebidas/Barra principal.webp",
+    imageSource: "/assets/bebidas/barra-principal.webp",
   },
   {
     id: "barra-de-burbujas",
     name: "Barra de Burbujas",
     location: "París",
     description: "Vinos espumantes y otras burbujas.",
-    imageSource: "/assets/bebidas/barra de burbujas.webp",
+    imageSource: "/assets/bebidas/barra-de-burbujas.webp",
   },
   {
     id: "seco-de-oro",
@@ -30,6 +30,6 @@ export const DRINKS_BARS: DrinksBar[] = [
     location: "San Felipe",
     description:
       "Experiencia de coctelería con Seco de Oro, asociado a Rubén Blades y Mario Castrellón.",
-    imageSource: "/assets/bebidas/seco de oro.webp",
+    imageSource: "/assets/bebidas/seco-de-oro.webp",
   },
 ];

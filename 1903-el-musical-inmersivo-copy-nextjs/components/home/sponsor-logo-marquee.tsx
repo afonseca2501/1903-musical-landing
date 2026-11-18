@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   SPONSOR_LOGOS,
   splitSponsorLogoColumns,
@@ -29,12 +30,14 @@ function LogoStack({
     <>
       {logos.map((logo, index) => (
         <div key={`${keyPrefix}-${index}`} className={styles.logo}>
-          <img
+          <Image
             className={logoImageClass(logo)}
             src={logo.src}
             alt={logo.alt}
+            width={logo.shape === "horizontal" ? 240 : 160}
+            height={logo.shape === "horizontal" ? 96 : 160}
+            sizes="(max-width: 767px) 30vw, 12rem"
             loading="lazy"
-            decoding="async"
           />
         </div>
       ))}

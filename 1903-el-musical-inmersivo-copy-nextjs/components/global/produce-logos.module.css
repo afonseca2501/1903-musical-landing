@@ -15,7 +15,7 @@
   height: clamp(2.75rem, 5vw, 3.5rem);
 }
 
-.logo img {
+.logoImage {
   display: block;
   width: auto;
   max-width: min(100%, 10rem);
@@ -29,7 +29,7 @@
     height: 2.5rem;
   }
 
-  .logo img {
+  .logoImage {
     max-width: 8rem;
   }
 }
