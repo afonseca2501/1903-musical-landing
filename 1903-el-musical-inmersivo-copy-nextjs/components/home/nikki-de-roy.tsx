@@ -20,12 +20,14 @@ export function HomeNikkiDeRoy(props: { backdropClass?: string }) {
           <div className={styles.layout}>
             <Reveal className={styles.revealFull} delay={0.06}>
               <div className={styles.portraitCol}>
-                <div
-                  className={styles.portraitFrame}
-                  role="img"
-                  aria-label="Retrato de Nikki de Roy"
-                >
-                  <div className={styles.portraitPlaceholder} aria-hidden="true" />
+                <div className={styles.portraitFrame}>
+                  <img
+                    className={styles.portraitImage}
+                    src="/assets/NIKKI.webp"
+                    alt="Retrato de Nikki de Roy"
+                    width={900}
+                    height={1200}
+                  />
                 </div>
               </div>
             </Reveal>
