@@ -81,7 +81,6 @@ function scaleFromFilename(filename: string): SponsorLogoScale {
 
 /** Sponsor / ally logos in `public/assets/logos` (excludes `produce/`). */
 const SPONSOR_LOGO_FILES = [
-  "ALPHA.webp",
   "ATP.webp",
   "BUDGET.webp",
   "EVENTOS & EVENTOS.webp",
@@ -106,6 +105,7 @@ const SPONSOR_LOGO_FILES = [
 const PRODUCE_LOGO_FILES = [
   "Logo Full House.webp",
   "Logo Stardust.webp",
+  "ALPHA.webp",
 ] as const;
 
 export const SPONSOR_LOGOS: SponsorLogo[] = SPONSOR_LOGO_FILES.map((filename) => ({

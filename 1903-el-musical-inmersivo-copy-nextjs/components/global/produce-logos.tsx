@@ -5,19 +5,25 @@ import styles from "./produce-logos.module.css";
 export function ProduceLogos() {
   return (
     <div className={styles.root} aria-label="Productoras">
-      {PRODUCE_LOGOS.map((logo) => (
-        <div key={logo.src} className={styles.logo}>
-          <Image
-            className={styles.logoImage}
-            src={logo.src}
-            alt={logo.alt}
-            width={200}
-            height={56}
-            sizes="10rem"
-            loading="lazy"
-          />
-        </div>
-      ))}
+      {PRODUCE_LOGOS.map((logo) => {
+        const isAlpha = logo.alt === "Alpha";
+        return (
+          <div
+            key={logo.src}
+            className={`${styles.logo}${isAlpha ? ` ${styles.logoAlpha}` : ""}`}
+          >
+            <Image
+              className={styles.logoImage}
+              src={logo.src}
+              alt={logo.alt}
+              width={200}
+              height={56}
+              sizes="10rem"
+              loading="lazy"
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }

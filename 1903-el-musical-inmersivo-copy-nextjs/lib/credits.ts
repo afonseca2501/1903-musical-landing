@@ -18,24 +18,24 @@ export const CREDIT_GROUPS: CreditGroup[] = [
     title: "Libreto, música y dirección",
     lines: [
       { label: "Libreto", value: "Diego De Obaldía" },
-      { label: "Dirección Artística", value: "Diego De Obaldía" },
       {
         label: "Música Original",
         value:
-          "Alejandro Lagrotta, Eduardo Charry, Diego De Obaldía, Aaron Zebede, Noel Sánchez, Arian Abadi",
+          "Diego De Obaldía, Eduardo Charry, Alejandro Lagrotta, Noel Sanchez, Aaron Zebede",
       },
+      { label: "Dirección Artística", value: "Aaron Zebede" },
       {
         label: "Producción",
         value:
-          "Aaron Zebede, Stardust Entertainment, Full House Entertainment, Alpha Productions",
+          "Stardust Entertainment; Full House Entertainment; Alpha Productions",
       },
       {
         label: "Dirección Musical, Arreglo vocal, Diseño y operación de sonido",
-        value: "José «Pepe» Casis",
+        value: 'José "Pepe" Casís',
       },
       { label: "Dirección de Orquesta", value: "Eduardo Charry" },
       { label: "Coreografías", value: "Maryelin Barahona" },
-      { label: "Asistente del Director", value: "Ana Fernández" },
+      { label: "Asistente del Director", value: "Ana Melissa Durán" },
     ],
   },
   {
@@ -43,25 +43,24 @@ export const CREDIT_GROUPS: CreditGroup[] = [
     title: "Escenografía, mercado e iluminación",
     lines: [
       { label: "Confección de Escenografía", value: "Rafael Navarro" },
-      { label: "Realización de Escenografía", value: "NAFER, S.A" },
+      { label: "Realización de Escenografía", value: "NAFER, S.A." },
       {
         label: "Diseño de Mercado Inmersivo",
         value: "Kenia Rodríguez, María Fernanda Achurra",
       },
-      { label: "Confección de Mercado Inmersivo", value: "Eric De León" },
       {
-        label: "Proyectos gráficos y estructuras",
-        value: "Meeting & Show",
+        label: "Confección de Mercado Inmersivo",
+        value: "Proyectos gráficos y estructuras",
       },
-      { label: "Diseño de Iluminación", value: "Ana Melissa Durán" },
+      { label: "Diseño de Iluminación", value: "Eric De León" },
       {
         label: "Equipo de Luces, Sonido, Pantallas y Tarimas",
-        value: "Jaime Ávila",
+        value: "Meeting & Show",
       },
-      { label: "Diseño de Vestuario", value: "Eduardo Bosano" },
+      { label: "Diseño de Vestuario", value: "Jaime Ávila" },
       {
         label: "Coordinación y Confección de Utilería",
-        value: "Ángelo Flores",
+        value: "Ana Fernández",
       },
     ],
   },
@@ -69,24 +68,32 @@ export const CREDIT_GROUPS: CreditGroup[] = [
     id: "equipo-tecnico-escena",
     title: "Equipo técnico y escena",
     lines: [
-      { label: "Ingeniero de sonido", value: "Alexa Casanova" },
+      { label: "Ingeniero de sonido", value: "Eduardo Bosano" },
       {
         label: "Asistente de Audio/Microfonía",
-        value: "Ferdinand Suárez",
+        value: "Ángelo Flores",
       },
       {
         label: "Asistentes Técnicos y Operadores de Consola",
-        value: "Joey Lalo",
+        value: "Alexa Casanova; Ferdinand Suárez",
+      },
+      { label: "Diseño y manejo de Pantallas", value: "Joey Lalo" },
+      {
+        label: "Asistentes de Producción",
+        value:
+          "Kenia Rodríguez; Sandra Saavedra; Marlane Salazar; Isabella De Freitas",
+      },
+      { label: "Coordinadora de Escena", value: "Ana Fernández" },
+      {
+        label: "Equipo de Backstage",
+        value:
+          "Michell Martinez; Victoria Arias; William Badillo; Alejandro Valery; Mateo Nariño",
       },
       {
-        label: "Diseño y manejo de Pantallas",
-        value: "Kenia Rodríguez",
+        label: "Perseguidoras",
+        value: "Marcelo Quiñones; Alex Lefevre",
       },
-      { label: "Asistentes de Producción", value: "Sandra Saavedra" },
-      { label: "Coordinadora de Escena", value: "Marlane Salazar" },
-      { label: "Equipo de Backstage", value: "Isabella De Freitas" },
-      { label: "Perseguidoras", value: "Ana Fernández" },
-      { label: "Maquillaje", value: "Michell Martinez" },
+      { label: "Maquillaje", value: "Bolívar Aparicio" },
     ],
   },
   {
@@ -95,23 +102,22 @@ export const CREDIT_GROUPS: CreditGroup[] = [
     lines: [
       {
         label: "Fotografía y flyer oficial",
-        value: "Victoria Arias",
+        value: "Javier Alejandro Solís",
       },
       {
         label: "Diseño de programa de mano",
-        value: "William Badillo",
+        value: "Anthony Fonseca",
       },
+      { label: "Coordinadora de mercadeo", value: "Mafe Casis" },
       {
-        label: "Coordinadora de mercadeo",
-        value: "Alejandro Valery",
+        label: "Community manager",
+        value: 'Jesús "Yisus" Marín',
       },
-      { label: "Community manager", value: "Mateo Nariño" },
-      { label: "Producción de videos", value: "Marcelo Quiñones" },
-      { label: "Editor de videos", value: "Alex Lefevre" },
+      { label: "Producción de videos", value: "Mariano González" },
+      { label: "Editor de videos", value: "Rogelio Reyes" },
       {
         label: "Boletería",
-        value:
-          "Bolívar Aparicio, Javier Alejandro Solis, Anthony Fonseca, MaFe Casis, Jesús «Yisus» Marin, Mariano González, Rodrigo Reyes Ulala, Panatickets/Victoria Trejos",
+        value: "Panatickets / Victora Trejos",
       },
     ],
   },

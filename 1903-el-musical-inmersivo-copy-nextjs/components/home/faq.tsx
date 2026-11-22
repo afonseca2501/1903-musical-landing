@@ -3,6 +3,7 @@
 import { IconList } from "@/components/relume/icon-list";
 import { FaqSectionListLeftVertical } from "@/components/relume/faq-section-list-left-vertical";
 import { CREDIT_GROUPS, CREDITS_INTRO } from "@/lib/credits";
+import { CAST_MEMBERS } from "@/lib/elenco";
 import { ORCHESTRA_MEMBERS } from "@/lib/orchestra";
 import { sectionTemplateClass } from "@/lib/section-template";
 
@@ -30,12 +31,23 @@ export function HomeFaq(props: { backdropClass?: string }) {
       faqAnswer: <CreditAnswer lines={group.lines} />,
     })),
     {
-      faqQuestion: <>La orquesta en vivo</>,
+      faqQuestion: <>Orquesta</>,
       faqAnswer: (
         <CreditAnswer
           lines={ORCHESTRA_MEMBERS.map((member) => ({
-            label: member.role,
-            value: member.name,
+            label: member.name,
+            value: member.role,
+          }))}
+        />
+      ),
+    },
+    {
+      faqQuestion: <>Elenco</>,
+      faqAnswer: (
+        <CreditAnswer
+          lines={CAST_MEMBERS.map((member) => ({
+            label: member.name,
+            value: member.role,
           }))}
         />
       ),

@@ -38,7 +38,7 @@ const CAST_RAW: { name: string; role: string }[] = [
   { name: "Randy Domínguez", role: "Theodore Roosevelt" },
   { name: "Juliette Roy", role: "María De La Ossa de Amador" },
   { name: "Diego De Obaldía", role: "Philippe Bunau Varilla" },
-  { name: "José Alejandro Rodríguez", role: "Narrador/Ascanio" },
+  { name: "José Alejandro Rodríguez", role: "Narrador / Ascanio" },
   {
     name: "Hugo Víctor Rodríguez",
     role: "William Nelson Cromwell / James Shaler",
@@ -50,7 +50,7 @@ const CAST_RAW: { name: string; role: string }[] = [
   { name: "Mariano González", role: "Federico Boyd" },
   {
     name: "Kevin Carrillo (Robinho)",
-    role: "Manuel Espinosa Batista/Porfirio Meléndez",
+    role: "Manuel Espinosa Batista / Porfirio Meléndez",
   },
   { name: "Edixo Jiménez", role: "Tomás Arias" },
   {
@@ -61,15 +61,16 @@ const CAST_RAW: { name: string; role: string }[] = [
   { name: "Omar Stevens", role: "General Esteban Huertas" },
   { name: "Juan Rangel", role: "Coronel Torres" },
   { name: "Aaron Zebede", role: "General Tobar" },
-  { name: "Jordi Alvarado", role: "Cura/Ensemble" },
-  { name: "Hermes Mendoza", role: "Victoriano Lorenzo/Ensemble" },
+  { name: "Jordi Alvarado", role: "Cura / Ensemble" },
+  { name: "Hermes Mendoza", role: "Victoriano Lorenzo / Ensemble" },
   {
     name: "Juan Diego Araúz",
-    role: "Juan Bautista Pérez y Soto/Duque/John Hay / Herbert Prescott/Ensemble",
+    role:
+      "Juan Bautista Pérez y Soto / Duque / John Hay / Herbert Prescott / Ensemble",
   },
   {
     name: "Odette Versailles",
-    role: "Tía Goya/Tiffany Kimberly Clark/Clara Hay/Ensemble",
+    role: "Tía Goya / Tiffany Kimberly Clark / Clara Hay / Ensemble",
   },
   { name: "Mia Rocha", role: "Anita / Ensemble" },
   { name: "Adela Owens", role: "Ensemble" },

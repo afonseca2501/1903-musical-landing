@@ -14,7 +14,7 @@ export const ORCHESTRA_MEMBERS: OrchestraMember[] = [
   },
   {
     role: "Guitarra Eléctrica y Mejoranera",
-    name: "Gustavo Salamin",
+    name: "Gustavo Salamín",
   },
   {
     role: "Bajo Eléctrico",
@@ -41,7 +41,15 @@ export const ORCHESTRA_MEMBERS: OrchestraMember[] = [
     name: "Alejandra Ordoñez",
   },
   {
-    role: "Trompeta y Flugelhorn, Saxofón Tenor y Flauta, Trombón",
-    name: "Alex Rodriguez, Néstor Gonzalez, Héctor Torres",
+    role: "Trompeta y Flugelhorn",
+    name: "Alex Rodriguez",
+  },
+  {
+    role: "Saxofón Tenor y Flauta",
+    name: "Néstor Gonzalez",
+  },
+  {
+    role: "Trombón",
+    name: "Héctor Torres",
   },
 ];
