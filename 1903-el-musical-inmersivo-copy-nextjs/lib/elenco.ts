@@ -8,25 +8,29 @@ export const CAST_PLACEHOLDER = "/placeholders/placeholder-8ef0c9cf.svg";
 
 const ELENCO_DIR = "/assets/Elenco/estelar";
 
-/** First-name files present in `public/assets/Elenco/estelar`. */
-const KNOWN_HEADSHOTS: Record<string, string> = {
-  Alejandro: `${ELENCO_DIR}/Alejandro.webp`,
-  Diego: `${ELENCO_DIR}/Diego.webp`,
-  Elmis: `${ELENCO_DIR}/Elmis.webp`,
-  Hugo: `${ELENCO_DIR}/Hugo.webp`,
-  Juliette: `${ELENCO_DIR}/Juliette.webp`,
-};
-
-/** Juliette.webp is for Juliette Roy only (not Juliette Carles). */
+/** Explicit headshots keyed by full cast name (as in CAST_RAW). */
 const HEADSHOT_BY_FULL_NAME: Record<string, string> = {
-  "Juliette Roy": KNOWN_HEADSHOTS.Juliette,
+  "Alejandro Lagrotta": `${ELENCO_DIR}/alejandro-lagrotta.webp`,
+  "Randy Domínguez": `${ELENCO_DIR}/randy-dominguez.webp`,
+  "Juliette Roy": `${ELENCO_DIR}/juliette-roy.webp`,
+  "Diego De Obaldía": `${ELENCO_DIR}/diego-de-obaldia.webp`,
+  "José Alejandro Rodríguez": `${ELENCO_DIR}/jose-alejandro-rodriguez.webp`,
+  "Hugo Víctor Rodríguez": `${ELENCO_DIR}/hugo-victor-rodriguez.webp`,
+  "Lucho Gotti": `${ELENCO_DIR}/lucho-gotti.webp`,
+  "Eusebio Pedroza": `${ELENCO_DIR}/eusebio-pedroza.webp`,
+  "Alex Montes": `${ELENCO_DIR}/alex-montes.webp`,
+  "Freddy Araúz": `${ELENCO_DIR}/freddy-arauz.webp`,
+  "Kevin Carrillo (Robinho)": `${ELENCO_DIR}/kevin-carrillo.webp`,
+  "Edixo Jiménez": `${ELENCO_DIR}/edixo-jimenez.webp`,
+  "Santiago Bustamante": `${ELENCO_DIR}/santiago-bustamante.webp`,
+  "Elmis Castillo": `${ELENCO_DIR}/elmis-castillo.webp`,
+  "Omar Stevens": `${ELENCO_DIR}/omar-stevens.webp`,
+  "Aaron Zebede": `${ELENCO_DIR}/aaron-zebede.webp`,
+  "Hermes Mendoza": `${ELENCO_DIR}/hermes-mendoza.webp`,
 };
 
 export function castImageFor(name: string): string {
-  if (HEADSHOT_BY_FULL_NAME[name]) return HEADSHOT_BY_FULL_NAME[name];
-  const first = name.split(/\s+/)[0];
-  if (first === "Juliette") return CAST_PLACEHOLDER;
-  return KNOWN_HEADSHOTS[first] ?? CAST_PLACEHOLDER;
+  return HEADSHOT_BY_FULL_NAME[name] ?? CAST_PLACEHOLDER;
 }
 
 const CAST_RAW: { name: string; role: string }[] = [
