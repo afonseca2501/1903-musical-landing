@@ -13,6 +13,7 @@
 .eyebrow {
   margin: 0;
   color: var(--scheme-text-muted, rgba(255, 255, 255, 0.55));
+  font-family: var(--font-family-body);
   font-size: var(--text-small-size, 0.875rem);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -22,13 +23,16 @@
   margin: 0;
   color: var(--scheme-heading, #fff);
   font-family: var(--font-family-heading, inherit);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  font-weight: 500;
   line-height: 1.1;
 }
 
 .intro {
   margin: 0;
+  max-width: 40rem;
   color: var(--scheme-text, rgba(255, 255, 255, 0.78));
+  font-family: var(--font-family-body);
   font-size: var(--text-regular-size, 1rem);
   line-height: 1.6;
 }
@@ -90,6 +94,7 @@
 .name {
   margin: 0;
   color: var(--scheme-heading, #fff);
+  font-family: var(--font-family-body);
   font-size: 0.975rem;
   font-weight: 500;
   line-height: 1.35;
@@ -98,10 +103,12 @@
 
 .detail {
   margin: 0;
-  color: var(--scheme-text-muted, rgba(255, 255, 255, 0.6));
-  font-size: 0.8125rem;
-  line-height: 1.35;
-  transition: color 180ms ease;
+  color: color-mix(in srgb, var(--scheme-text-muted, rgba(23, 18, 14, 0.72)) 100%, transparent);
+  font-family: var(--font-family-body);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  opacity: 0.85;
+  transition: color 180ms ease, opacity 180ms ease;
 }
 
 .price {
@@ -112,6 +119,7 @@
   border: 1px solid transparent;
   background: transparent;
   color: var(--scheme-heading, #fff);
+  font-family: var(--font-family-body);
   font-size: 0.9375rem;
   font-weight: 600;
   letter-spacing: 0.02em;

@@ -32,9 +32,9 @@
 .title {
   margin: 0;
   color: var(--scheme-heading);
-  font-family: var(--font-family-body);
-  font-size: var(--text-regular-size);
-  font-weight: var(--text-weight-strong);
+  font-family: var(--font-family-heading);
+  font-size: clamp(1.05rem, 1.6vw, 1.125rem);
+  font-weight: 500;
   letter-spacing: var(--text-letter-spacing);
   line-height: var(--text-regular-line-height);
   text-transform: var(--text-transform);
@@ -99,9 +99,9 @@
 
 .blockLabel {
   margin: 0;
-  color: var(--scheme-accent, #c09665);
+  color: var(--scheme-accent, #b07b3e);
   font-family: var(--tagline-font, var(--font-family-body));
-  font-size: var(--text-small-size);
+  font-size: clamp(0.875rem, 1.2vw, 0.9375rem);
   font-weight: var(--tagline-weight, var(--text-weight-strong));
   letter-spacing: var(--tagline-letter-spacing, 0.06em);
   line-height: var(--tagline-line-height, 1.2);

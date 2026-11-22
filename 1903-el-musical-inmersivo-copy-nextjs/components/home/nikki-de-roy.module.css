@@ -73,7 +73,7 @@
   margin: 0;
   color: var(--brand-neutral);
   font-family: var(--brand-font-display);
-  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  font-size: clamp(1.75rem, 3.8vw, 2.5rem);
   font-weight: 500;
   letter-spacing: 0.01em;
   line-height: 1.15;
@@ -100,9 +100,10 @@
 
 .closing {
   margin: 0.75rem 0 0;
+  max-width: 36rem;
   color: var(--brand-neutral);
   font-family: var(--brand-font-display);
-  font-size: clamp(1.25rem, 2.8vw, 1.65rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
   font-weight: 500;
   font-style: italic;
   letter-spacing: 0.01em;

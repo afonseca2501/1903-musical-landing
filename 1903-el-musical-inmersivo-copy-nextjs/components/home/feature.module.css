@@ -4,9 +4,11 @@
 
 .compactSection :global(.heading-style-h2),
 .compactSection :global(.rt-heading-style-h2) {
-  max-width: 22ch;
+  max-width: 32ch;
+  font-size: clamp(1.85rem, 3.5vw, 2.4rem);
 }
 
 .compactSection :global(.rt-paragraph) {
   max-width: 38rem;
+  font-family: var(--font-family-body);
 }

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
+import { DishRating, useDishRatings } from "@/components/home/dish-rating";
 import {
   FOOD_MENU_INTRO,
   FOOD_MENU_REGIONS,
@@ -10,7 +11,13 @@ import {
 import { withSectionTemplate } from "@/lib/section-template";
 import styles from "./food-menu.module.css";
 
+const ALL_DISH_IDS = FOOD_MENU_REGIONS.flatMap((region) =>
+  region.dishes.map((dish) => dish.id),
+);
+
 export function HomeFoodMenu(props: { backdropClass?: string }) {
+  const { summaries, enabled, setSummary } = useDishRatings(ALL_DISH_IDS);
+
   return (
     <Reveal>
       <section
@@ -72,6 +79,20 @@ export function HomeFoodMenu(props: { backdropClass?: string }) {
                           <p className={styles.description}>
                             {dish.description}
                           </p>
+                          <DishRating
+                            dishId={dish.id}
+                            dishName={dish.name}
+                            summary={
+                              summaries[dish.id] ?? {
+                                dishId: dish.id,
+                                average: 0,
+                                count: 0,
+                                userRating: null,
+                              }
+                            }
+                            enabled={enabled}
+                            onRated={setSummary}
+                          />
                         </article>
                       );
                     })}
