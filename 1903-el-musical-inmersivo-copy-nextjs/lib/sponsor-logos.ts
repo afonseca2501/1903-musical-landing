@@ -33,6 +33,7 @@ function altFromFilename(filename: string) {
     "bonlac.webp": "Bonlac",
     "oro-de-cana.webp": "Oro de Caña",
     "panaticket.webp": "Panatickets",
+    "SecoHerrerano.webp": "Seco Herrerano",
     "Logo Full House.webp": "Full House",
     "Logo Stardust.webp": "Stardust Entertainment",
   };
@@ -95,6 +96,7 @@ const SPONSOR_LOGO_FILES = [
   "Momi.webp",
   "PHOTO-2026-10-30-08-43-03.webp",
   "RIGSA_Logo_Positivo.webp",
+  "SecoHerrerano.webp",
   "bonlac.webp",
   "oro-de-cana.webp",
   "panaticket.webp",

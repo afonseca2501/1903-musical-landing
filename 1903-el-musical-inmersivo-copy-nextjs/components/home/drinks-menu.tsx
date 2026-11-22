@@ -2,13 +2,20 @@
 
 import { Reveal } from "@/components/Reveal";
 import { DRINK_CATEGORIES, DRINKS_MENU_INTRO } from "@/lib/drinks-menu";
+import { withSectionTemplate } from "@/lib/section-template";
 import styles from "./drinks-menu.module.css";
 
 export function HomeDrinksMenu(props: { backdropClass?: string }) {
   return (
     <Reveal>
       <section
-        className={`scheme-2 section ${props.backdropClass ?? ""} ${styles.section}`.trim()}
+        className={withSectionTemplate(
+          1,
+          "section",
+          props.backdropClass,
+          styles.section,
+        )}
+        data-template="1"
       >
         <div className="container">
           <header className={styles.header}>

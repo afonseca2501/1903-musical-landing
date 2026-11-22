@@ -4,6 +4,7 @@ import { IconList } from "@/components/relume/icon-list";
 import { FaqSectionListLeftVertical } from "@/components/relume/faq-section-list-left-vertical";
 import { CREDIT_GROUPS, CREDITS_INTRO } from "@/lib/credits";
 import { ORCHESTRA_MEMBERS } from "@/lib/orchestra";
+import { sectionTemplateClass } from "@/lib/section-template";
 
 function CreditAnswer({
   lines,
@@ -45,7 +46,7 @@ export function HomeFaq(props: { backdropClass?: string }) {
     <FaqSectionListLeftVertical
       sectionPadding={"Top & Bottom"}
       headingText={<>Quién hace posible 1903</>}
-      sectionScheme={"scheme-1"}
+      sectionScheme={sectionTemplateClass(3)}
       sectionRole={"Section"}
       backdropClass={["section-pad-top-tight", props.backdropClass]
         .filter(Boolean)

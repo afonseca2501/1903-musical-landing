@@ -1,0 +1,143 @@
+/**
+ * Section visual templates for 1903.
+ * Use on any section: className="template-1" | "template-2" | "template-3"
+ * or data-template="1" | "2" | "3"
+ *
+ * Maps onto existing --scheme-* tokens so Relume + custom sections inherit look.
+ * Typography stays global: Lora (headings) + Inter (body).
+ */
+
+:root {
+  --template-navy: #0f2740;
+  --template-navy-secondary: #0a1a2c;
+  --template-navy-muted: rgba(228, 213, 183, 0.72);
+}
+
+/* —— Template 1: Claro / Pergamino + rojo boleto —— */
+.template-1,
+[data-template="1"] {
+  color-scheme: light;
+  --scheme-background: var(--brand-pergamino, #e4d5b7);
+  --scheme-background-secondary: #f0e7d7;
+  --scheme-heading: var(--brand-neutral, #17120e);
+  --scheme-text: var(--brand-neutral, #17120e);
+  --scheme-text-muted: rgba(23, 18, 14, 0.72);
+  --scheme-accent: var(--brand-rojo-boleto, #af2429);
+  --scheme-accent-subtle: rgba(175, 36, 41, 0.1);
+  --scheme-border: rgba(23, 18, 14, 0.18);
+  --scheme-background-glass: rgba(228, 213, 183, 0.82);
+  --scheme-button-text: #ffffff;
+  --button-fill: var(--brand-rojo-boleto, #af2429);
+  --button-text: #ffffff;
+  --button-secondary-fill: transparent;
+  --button-secondary-text: var(--brand-neutral, #17120e);
+  --button-secondary-border: rgba(23, 18, 14, 0.22);
+  --button-link-text: var(--brand-rojo-boleto, #af2429);
+  --tagline-fill: transparent;
+  --tagline-text: var(--brand-oro, #b07b3e);
+  --tagline-border: transparent;
+  --tag-fill: rgba(176, 123, 62, 0.12);
+  --input-fill: transparent;
+  --input-border: rgba(23, 18, 14, 0.2);
+  --input-accent: var(--brand-rojo-boleto, #af2429);
+  --input-focus: var(--brand-rojo-boleto, #af2429);
+  --input-accent-ink: #ffffff;
+  --input-text: var(--brand-neutral, #17120e);
+  --input-label: var(--brand-neutral, #17120e);
+  --icon-color: var(--brand-oro, #b07b3e);
+  --icon-fill: transparent;
+  --icon-border: transparent;
+  --icon-color-bare: var(--brand-oro, #b07b3e);
+  --icon-fill-held: rgba(176, 123, 62, 0.12);
+  --logo-light-display: block;
+  --logo-dark-display: none;
+  --asset-invert: none;
+  background-color: var(--scheme-background);
+  color: var(--scheme-text);
+}
+
+/* —— Template 2: Chocolate / Sepia —— */
+.template-2,
+[data-template="2"] {
+  color-scheme: dark;
+  --scheme-background: var(--brand-sepia, #6e4b30);
+  --scheme-background-secondary: var(--brand-neutral, #17120e);
+  --scheme-heading: var(--brand-pergamino, #e4d5b7);
+  --scheme-text: var(--brand-pergamino, #e4d5b7);
+  --scheme-text-muted: rgba(228, 213, 183, 0.78);
+  --scheme-accent: var(--brand-oro, #b07b3e);
+  --scheme-accent-subtle: rgba(176, 123, 62, 0.16);
+  --scheme-border: rgba(228, 213, 183, 0.22);
+  --scheme-background-glass: rgba(110, 75, 48, 0.86);
+  --scheme-button-text: #ffffff;
+  --button-fill: var(--brand-rojo-boleto, #af2429);
+  --button-text: #ffffff;
+  --button-secondary-fill: transparent;
+  --button-secondary-text: var(--brand-pergamino, #e4d5b7);
+  --button-secondary-border: rgba(228, 213, 183, 0.28);
+  --button-link-text: var(--brand-oro, #b07b3e);
+  --tagline-fill: transparent;
+  --tagline-text: var(--brand-oro, #b07b3e);
+  --tagline-border: transparent;
+  --tag-fill: rgba(176, 123, 62, 0.18);
+  --input-fill: transparent;
+  --input-border: rgba(228, 213, 183, 0.25);
+  --input-accent: var(--brand-oro, #b07b3e);
+  --input-focus: var(--brand-oro, #b07b3e);
+  --input-accent-ink: var(--brand-neutral, #17120e);
+  --input-text: var(--brand-pergamino, #e4d5b7);
+  --input-label: var(--brand-pergamino, #e4d5b7);
+  --icon-color: var(--brand-oro, #b07b3e);
+  --icon-fill: transparent;
+  --icon-border: transparent;
+  --icon-color-bare: var(--brand-oro, #b07b3e);
+  --icon-fill-held: rgba(176, 123, 62, 0.18);
+  --logo-light-display: none;
+  --logo-dark-display: block;
+  --asset-invert: none;
+  background-color: var(--scheme-background);
+  color: var(--scheme-text);
+}
+
+/* —— Template 3: Azul marino —— */
+.template-3,
+[data-template="3"] {
+  color-scheme: dark;
+  --scheme-background: var(--template-navy);
+  --scheme-background-secondary: var(--template-navy-secondary);
+  --scheme-heading: #f5efe4;
+  --scheme-text: #f5efe4;
+  --scheme-text-muted: var(--template-navy-muted);
+  --scheme-accent: var(--brand-oro, #b07b3e);
+  --scheme-accent-subtle: rgba(176, 123, 62, 0.16);
+  --scheme-border: rgba(245, 239, 228, 0.2);
+  --scheme-background-glass: rgba(15, 39, 64, 0.86);
+  --scheme-button-text: #ffffff;
+  --button-fill: var(--brand-rojo-boleto, #af2429);
+  --button-text: #ffffff;
+  --button-secondary-fill: transparent;
+  --button-secondary-text: #f5efe4;
+  --button-secondary-border: rgba(245, 239, 228, 0.28);
+  --button-link-text: var(--brand-oro, #b07b3e);
+  --tagline-fill: transparent;
+  --tagline-text: var(--brand-oro, #b07b3e);
+  --tagline-border: transparent;
+  --tag-fill: rgba(176, 123, 62, 0.18);
+  --input-fill: transparent;
+  --input-border: rgba(245, 239, 228, 0.25);
+  --input-accent: var(--brand-oro, #b07b3e);
+  --input-focus: var(--brand-oro, #b07b3e);
+  --input-accent-ink: var(--template-navy-secondary);
+  --input-text: #f5efe4;
+  --input-label: #f5efe4;
+  --icon-color: var(--brand-oro, #b07b3e);
+  --icon-fill: transparent;
+  --icon-border: transparent;
+  --icon-color-bare: var(--brand-oro, #b07b3e);
+  --icon-fill-held: rgba(176, 123, 62, 0.18);
+  --logo-light-display: none;
+  --logo-dark-display: block;
+  --asset-invert: none;
+  background-color: var(--scheme-background);
+  color: var(--scheme-text);
+}

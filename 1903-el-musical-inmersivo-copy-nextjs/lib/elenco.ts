@@ -91,3 +91,12 @@ export const CAST_MEMBERS: CastMember[] = CAST_RAW.map((member) => ({
   ...member,
   imageSource: castImageFor(member.name),
 }));
+
+/** Split cast across marquee rows (round-robin for photo mix). */
+export function splitCastMarqueeRows(rowCount = 3): CastMember[][] {
+  const rows: CastMember[][] = Array.from({ length: rowCount }, () => []);
+  CAST_MEMBERS.forEach((member, index) => {
+    rows[index % rowCount].push(member);
+  });
+  return rows;
+}

@@ -150,12 +150,12 @@
 .row:active .price,
 .row:has(.price:focus-visible) .price,
 .price:focus-visible {
-  color: #090705;
-  background: var(--scheme-accent, #c09665);
-  border-color: color-mix(in srgb, #e4d5b7 45%, transparent);
+  color: #ffffff;
+  background: var(--scheme-accent, #af2429);
+  border-color: color-mix(in srgb, #ffffff 35%, transparent);
   box-shadow:
-    0 0 0 1px color-mix(in srgb, #e4d5b7 40%, transparent),
-    0 4px 14px rgba(192, 150, 101, 0.35);
+    0 0 0 1px color-mix(in srgb, #ffffff 25%, transparent),
+    0 4px 14px color-mix(in srgb, var(--scheme-accent, #af2429) 40%, transparent);
   transform: scale(1.05);
   outline: none;
 }

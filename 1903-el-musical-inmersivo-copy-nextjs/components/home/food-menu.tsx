@@ -7,13 +7,20 @@ import {
   FOOD_MENU_REGIONS,
   FOOD_PLACEHOLDER,
 } from "@/lib/food-menu";
+import { withSectionTemplate } from "@/lib/section-template";
 import styles from "./food-menu.module.css";
 
 export function HomeFoodMenu(props: { backdropClass?: string }) {
   return (
     <Reveal>
       <section
-        className={`scheme-3 section ${props.backdropClass ?? ""} ${styles.section}`.trim()}
+        className={withSectionTemplate(
+          3,
+          "section",
+          props.backdropClass,
+          styles.section,
+        )}
+        data-template="3"
       >
         <div className="container">
           <header className={styles.header}>

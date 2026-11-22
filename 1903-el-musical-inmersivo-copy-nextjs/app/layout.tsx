@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
-import { Bodoni_Moda, Inter } from "next/font/google";
+import { Inter, Lora } from "next/font/google";
 import "./globals.css";
+import "./section-templates.css";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext"],
@@ -9,22 +10,21 @@ const inter = Inter({
   display: "swap",
 });
 
-const bodoniModa = Bodoni_Moda({
+const lora = Lora({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600"],
-  variable: "--font-bodoni",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-lora",
   display: "swap",
 });
 
 const fontVars = {
   ["--font-family-body"]: "var(--font-inter), Inter, system-ui, sans-serif",
-  ["--font-family-heading"]:
-    'var(--font-bodoni), "Bodoni Moda", Georgia, serif',
+  ["--font-family-heading"]: 'var(--font-lora), Lora, Georgia, serif',
 } as CSSProperties;
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="es-419" className={`${inter.variable} ${bodoniModa.variable}`}>
+    <html lang="es-419" className={`${inter.variable} ${lora.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -48,7 +48,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </noscript>
         <meta
           name="theme-color"
-          content="#F0E7D7"
+          content="#E4D5B7"
           suppressHydrationWarning={true}
         />
       </head>

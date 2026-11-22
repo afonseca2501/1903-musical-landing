@@ -1,18 +1,53 @@
+@keyframes cast-marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes cast-marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Override global `.section` (row flex) so header stacks above marquee. */
 .section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0;
   width: 100%;
+  overflow-x: clip;
+}
+
+.headerWrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--container-large, 80rem);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  width: 100%;
   max-width: 42rem;
   margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
 }
 
 .eyebrow {
   margin: 0;
-  color: var(--scheme-text-muted, rgba(255, 255, 255, 0.55));
+  color: var(--scheme-text-muted, rgba(23, 18, 14, 0.55));
   font-family: var(--font-family-body);
   font-size: var(--text-small-size, 0.875rem);
   font-weight: 500;
@@ -23,7 +58,7 @@
 
 .title {
   margin: 0;
-  color: var(--scheme-heading, #fff);
+  color: var(--scheme-heading, #17120e);
   font-family: var(--font-family-heading);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 500;
@@ -32,33 +67,91 @@
 
 .intro {
   margin: 0;
-  color: var(--scheme-text, rgba(255, 255, 255, 0.78));
+  color: var(--scheme-text, rgba(23, 18, 14, 0.78));
   font-family: var(--font-family-body);
   font-size: var(--text-regular-size, 1rem);
   line-height: 1.6;
   text-wrap: pretty;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(0.75rem, 2vw, 1.15rem);
+.marquee {
+  --cast-card-width: clamp(8.25rem, 16vw, 10.5rem);
+  --cast-gap: clamp(0.75rem, 2vw, 1.15rem);
+  --cast-row-gap: clamp(1.15rem, 2.5vw, 1.75rem);
+
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  gap: var(--cast-row-gap);
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+.row {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  overflow-x: clip;
+  touch-action: pan-y;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 3%,
+    #000 97%,
+    transparent 100%
+  );
+}
+
+.track {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  width: max-content;
+  max-width: none;
+  gap: var(--cast-gap);
+  will-change: transform;
+  animation: cast-marquee-left var(--cast-marquee-duration, 48s) linear infinite;
+}
+
+.rowReverse .track {
+  animation-name: cast-marquee-right;
+}
+
+.row:hover .track,
+.row:focus-within .track,
+.row:active .track {
+  animation-play-state: paused;
 }
 
 .card {
   display: flex;
   flex-direction: column;
+  flex: 0 0 var(--cast-card-width);
+  flex-shrink: 0;
   gap: 0.45rem;
-  min-width: 0;
+  box-sizing: border-box;
+  width: var(--cast-card-width);
+  min-width: var(--cast-card-width);
+  max-width: var(--cast-card-width);
 }
 
 .photo {
   position: relative;
+  flex-shrink: 0;
   aspect-ratio: 3 / 4;
   width: 100%;
   overflow: hidden;
   border-radius: var(--radius-medium, 0.5rem);
-  background: color-mix(in srgb, var(--scheme-background-secondary, #17120e) 90%, #000);
+  background: color-mix(
+    in srgb,
+    var(--scheme-background-secondary, #f0e7d7) 88%,
+    #000
+  );
 }
 
 .photoImage {
@@ -68,7 +161,7 @@
 
 .name {
   margin: 0;
-  color: var(--scheme-heading, #fff);
+  color: var(--scheme-heading, #17120e);
   font-family: var(--font-family-body);
   font-size: clamp(0.8rem, 1.4vw, 0.9375rem);
   font-weight: 600;
@@ -78,7 +171,7 @@
 
 .role {
   margin: 0;
-  color: var(--scheme-text-muted, rgba(255, 255, 255, 0.6));
+  color: var(--scheme-text-muted, rgba(23, 18, 14, 0.6));
   font-family: var(--font-family-body);
   font-size: clamp(0.7rem, 1.2vw, 0.8125rem);
   font-weight: 400;
@@ -86,20 +179,50 @@
   overflow-wrap: anywhere;
 }
 
-@media (min-width: 480px) {
-  .grid {
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--cast-gap);
+  }
+
+  .row {
+    display: contents;
+    mask-image: none;
+  }
+
+  .track {
+    display: contents;
+    animation: none;
+    width: auto;
+  }
+
+  .card {
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    flex: unset;
+  }
+
+  .card[data-duplicate="true"] {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 480px) {
+  .marquee {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 768px) {
-  .grid {
+@media (prefers-reduced-motion: reduce) and (min-width: 768px) {
+  .marquee {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 992px) {
-  .grid {
+@media (prefers-reduced-motion: reduce) and (min-width: 992px) {
+  .marquee {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
