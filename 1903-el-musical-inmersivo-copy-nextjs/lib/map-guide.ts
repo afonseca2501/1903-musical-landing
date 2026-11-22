@@ -16,7 +16,7 @@ export const MAP_GUIDE_INTRO =
 export const MAP_GUIDE_ITEMS: MapGuideItem[] = [
   {
     id: "arrabal-santa-ana",
-    title: "Arrabal de Santa Ana · Entrada y salida",
+    title: "Puerta de tierra · Entrada y salida",
     lead: "El comienzo de nuestro viaje.",
     blocks: [
       {

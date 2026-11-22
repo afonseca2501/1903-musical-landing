@@ -53,14 +53,14 @@ export default function HomePage() {
         <div id="historia" className="page-section">
           <HomeFeature />
         </div>
+        <div id="mapa" className="page-section">
+          <HomeFeature2 />
+        </div>
         <div id="menu-de-comida" className="page-section">
           <HomeFoodMenu />
         </div>
         <div id="menu-de-bebidas" className="page-section">
           <HomeDrinksMenu />
-        </div>
-        <div id="mapa" className="page-section">
-          <HomeFeature2 />
         </div>
         <div id="ficha-tecnica" className="page-section">
           <HomeFaq />
