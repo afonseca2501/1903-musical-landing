@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { href: "#ficha-tecnica", label: "Ficha técnica" },
   { href: "#programa", label: "Programa" },
   { href: "#nikki-de-roy", label: "Nikki" },
+  { href: "#voces-del-publico", label: "Chat en vivo" },
   { href: "#patrocinadores", label: "Patrocinadores" },
 ] as const;
 

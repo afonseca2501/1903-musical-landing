@@ -2,6 +2,10 @@
   scroll-padding-top: 4.75rem;
 }
 
+:global(#voces-del-publico) {
+  scroll-margin-top: 4.75rem;
+}
+
 .bar {
   --nav-neutral: #17120e;
   --nav-oro: #b07b3e;

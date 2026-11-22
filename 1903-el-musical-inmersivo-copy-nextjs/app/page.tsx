@@ -32,6 +32,9 @@ const HomeCredibilityList = dynamic(() =>
     (m) => m.HomeCredibilityList,
   ),
 );
+const HomeGuestbook = dynamic(() =>
+  import("@/components/home/guestbook").then((m) => m.HomeGuestbook),
+);
 const GlobalFooter = dynamic(() =>
   import("@/components/global/footer").then((m) => m.GlobalFooter),
 );
@@ -73,6 +76,9 @@ export default function HomePage() {
         </div>
         <div id="nikki-de-roy" className="page-section">
           <HomeNikkiDeRoy />
+        </div>
+        <div id="voces-del-publico" className="page-section">
+          <HomeGuestbook />
         </div>
         <div id="patrocinadores" className="page-section">
           <HomeCredibilityList />

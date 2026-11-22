@@ -3,12 +3,13 @@
 import { Reveal } from "@/components/Reveal";
 import { CredibilityListSectionCaptionCenterVertical } from "@/components/relume/credibility-list-section-caption-center-vertical";
 import { SponsorLogoMarquee } from "@/components/home/sponsor-logo-marquee";
+import { sectionTemplateClass } from "@/lib/section-template";
 
 export function HomeCredibilityList(props: { backdropClass?: string }) {
   return (
     <Reveal>
       <CredibilityListSectionCaptionCenterVertical
-        sectionScheme={"scheme-1"}
+        sectionScheme={sectionTemplateClass(1)}
         sectionPadding={"Top & Bottom"}
         headingText={<>Con el respaldo de</>}
         paragraphText={<>

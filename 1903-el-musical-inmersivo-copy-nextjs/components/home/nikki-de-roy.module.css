@@ -1,17 +1,14 @@
 .section {
-  --brand-neutral: #17120e;
   --brand-oro: #b07b3e;
-  --brand-pergamino: #e4d5b7;
-  --brand-sepia: #6e4b30;
   --brand-font-display: var(--font-family-heading);
   --brand-font-body: var(--font-family-body);
   --brand-hairline: color-mix(in srgb, var(--brand-oro) 40%, transparent);
-  --brand-text-body: var(--brand-sepia);
+  --brand-heading: var(--scheme-heading, #17120e);
+  --brand-text-body: var(--scheme-text-muted, rgba(23, 18, 14, 0.78));
 
   width: 100%;
-  background-color: var(--brand-pergamino);
-  color: var(--brand-neutral);
-  /* Tighten gap before patrocinadores */
+  background-color: var(--scheme-background, #e4d5b7);
+  color: var(--scheme-text, #17120e);
   padding-bottom: var(--section-padding-small, 3rem);
 }
 
@@ -40,7 +37,11 @@
   width: 100%;
   overflow: hidden;
   border: 1px solid var(--brand-oro);
-  background: color-mix(in srgb, var(--brand-sepia) 25%, var(--brand-neutral));
+  background: color-mix(
+    in srgb,
+    var(--scheme-background-secondary, #f0e7d7) 55%,
+    #6e4b30
+  );
 }
 
 .portraitImage {
@@ -71,7 +72,7 @@
 
 .title {
   margin: 0;
-  color: var(--brand-neutral);
+  color: var(--brand-heading);
   font-family: var(--brand-font-display);
   font-size: clamp(1.75rem, 3.8vw, 2.5rem);
   font-weight: 500;
@@ -101,7 +102,7 @@
 .closing {
   margin: 0.75rem 0 0;
   max-width: 36rem;
-  color: var(--brand-neutral);
+  color: var(--brand-heading);
   font-family: var(--brand-font-display);
   font-size: clamp(1.2rem, 2.5vw, 1.55rem);
   font-weight: 500;

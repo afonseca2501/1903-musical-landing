@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
+import { withSectionTemplate } from "@/lib/section-template";
 import styles from "./nikki-de-roy.module.css";
 
 const NARRATIVE = [
@@ -14,7 +15,13 @@ export function HomeNikkiDeRoy(props: { backdropClass?: string }) {
   return (
     <Reveal>
       <section
-        className={`scheme-1 section ${props.backdropClass ?? ""} ${styles.section}`.trim()}
+        className={withSectionTemplate(
+          1,
+          "section",
+          props.backdropClass,
+          styles.section,
+        )}
+        data-template="1"
         aria-labelledby="nikki-de-roy-title"
       >
         <div className="container">
