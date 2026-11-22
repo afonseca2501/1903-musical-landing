@@ -1,22 +1,4 @@
-@keyframes cast-marquee-left {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes cast-marquee-right {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-/* Override global `.section` (row flex) so header stacks above marquee. */
+/* Override global `.section` (row flex) so header stacks above the grid. */
 .section {
   display: flex;
   flex-direction: column;
@@ -24,16 +6,8 @@
   justify-content: flex-start;
   gap: 0;
   width: 100%;
-  overflow-x: clip;
-}
-
-.headerWrap {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: var(--container-large, 80rem);
-  margin-left: auto;
-  margin-right: auto;
+  /* Global `.section` uses overflow:hidden; keep content fully visible. */
+  overflow: visible;
 }
 
 .header {
@@ -74,70 +48,20 @@
   text-wrap: pretty;
 }
 
-.marquee {
-  --cast-card-width: clamp(8.25rem, 16vw, 10.5rem);
-  --cast-gap: clamp(0.75rem, 2vw, 1.15rem);
-  --cast-row-gap: clamp(1.15rem, 2.5vw, 1.75rem);
-
-  display: flex;
-  flex-direction: column;
-  flex: 0 0 auto;
-  gap: var(--cast-row-gap);
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.2vw, 1.5rem) clamp(0.75rem, 2vw, 1.15rem);
   width: 100%;
   min-width: 0;
-  overflow-x: clip;
-  overflow-y: visible;
-}
-
-.row {
-  position: relative;
-  flex: 0 0 auto;
-  width: 100%;
-  min-width: 0;
-  overflow: hidden;
-  overflow-x: clip;
-  touch-action: pan-y;
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    #000 3%,
-    #000 97%,
-    transparent 100%
-  );
-}
-
-.track {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-  width: max-content;
-  max-width: none;
-  gap: var(--cast-gap);
-  will-change: transform;
-  animation: cast-marquee-left var(--cast-marquee-duration, 48s) linear infinite;
-}
-
-.rowReverse .track {
-  animation-name: cast-marquee-right;
-}
-
-.row:hover .track,
-.row:focus-within .track,
-.row:active .track {
-  animation-play-state: paused;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  flex: 0 0 var(--cast-card-width);
-  flex-shrink: 0;
   gap: 0.45rem;
-  box-sizing: border-box;
-  width: var(--cast-card-width);
-  min-width: var(--cast-card-width);
-  max-width: var(--cast-card-width);
+  min-width: 0;
+  width: 100%;
 }
 
 .photo {
@@ -171,7 +95,11 @@
 
 .role {
   margin: 0;
-  color: color-mix(in srgb, var(--scheme-text-muted, rgba(23, 18, 14, 0.72)) 100%, transparent);
+  color: color-mix(
+    in srgb,
+    var(--scheme-text-muted, rgba(23, 18, 14, 0.72)) 100%,
+    transparent
+  );
   font-family: var(--font-family-body);
   font-size: clamp(0.8125rem, 1.2vw, 0.875rem);
   font-weight: 400;
@@ -183,50 +111,14 @@
   overflow: hidden;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .marquee {
-    display: grid;
+@media (max-width: 767px) {
+  .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--cast-gap);
-  }
-
-  .row {
-    display: contents;
-    mask-image: none;
-  }
-
-  .track {
-    display: contents;
-    animation: none;
-    width: auto;
-  }
-
-  .card {
-    width: auto;
-    min-width: 0;
-    max-width: none;
-    flex: unset;
-  }
-
-  .card[data-duplicate="true"] {
-    display: none;
   }
 }
 
-@media (prefers-reduced-motion: reduce) and (min-width: 480px) {
-  .marquee {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (prefers-reduced-motion: reduce) and (min-width: 768px) {
-  .marquee {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-@media (prefers-reduced-motion: reduce) and (min-width: 992px) {
-  .marquee {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+@media (max-width: 479px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
