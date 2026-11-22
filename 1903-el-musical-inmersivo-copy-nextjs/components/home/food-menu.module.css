@@ -67,6 +67,17 @@
   border: 1px solid color-mix(in srgb, var(--scheme-border, #333) 80%, transparent);
   border-radius: var(--radius-large, 0.75rem);
   background: color-mix(in srgb, var(--scheme-background-secondary, #141414) 88%, #000);
+  touch-action: manipulation;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.card:hover,
+.card:active,
+.card:has(.priceBadge:focus-visible) {
+  border-color: color-mix(in srgb, var(--scheme-accent, #c09665) 55%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--scheme-accent, #c09665) 25%, transparent);
 }
 
 .photoSlot {
@@ -97,11 +108,58 @@
   object-position: center;
 }
 
-.photoHint {
-  color: color-mix(in srgb, var(--scheme-text-muted, #999) 85%, transparent);
+.priceBadge {
+  position: absolute;
+  top: 0.65rem;
+  left: 0.65rem;
+  z-index: 2;
+  margin: 0;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: var(--scheme-accent, #c09665);
+  color: #090705;
   font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: 0 1px 4px rgba(9, 7, 5, 0.28);
+  cursor: default;
+  transform: scale(1);
+  transform-origin: top left;
+  touch-action: manipulation;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease;
+}
+
+.card:hover .priceBadge,
+.card:active .priceBadge,
+.card:has(.priceBadge:focus-visible) .priceBadge,
+.priceBadge:focus-visible {
+  background: color-mix(in srgb, var(--scheme-accent, #c09665) 78%, #fff);
+  color: #090705;
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, #e4d5b7 55%, transparent),
+    0 4px 14px rgba(192, 150, 101, 0.45);
+  transform: scale(1.05);
+  outline: none;
+}
+
+.photoHint {
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, #0d0d0d 72%, transparent);
+  color: color-mix(in srgb, var(--scheme-text-muted, #999) 95%, transparent);
+  font-size: 0.6875rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  pointer-events: none;
 }
 
 .dishName {
@@ -109,6 +167,13 @@
   color: var(--scheme-heading, #fff);
   font-size: 1.05rem;
   line-height: 1.35;
+  transition: color 180ms ease;
+}
+
+.card:hover .dishName,
+.card:active .dishName,
+.card:has(.priceBadge:focus-visible) .dishName {
+  color: var(--scheme-accent, #c09665);
 }
 
 .location {

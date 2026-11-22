@@ -1,9 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
 import {
   FOOD_MENU_INTRO,
   FOOD_MENU_REGIONS,
+  FOOD_PLACEHOLDER,
 } from "@/lib/food-menu";
 import styles from "./food-menu.module.css";
 
@@ -26,18 +28,46 @@ export function HomeFoodMenu(props: { backdropClass?: string }) {
                 <div className={styles.region}>
                   <h3 className={styles.regionTitle}>{region.title}</h3>
                   <div className={styles.grid}>
-                    {region.dishes.map((dish) => (
-                      <article key={dish.name} className={styles.card}>
-                        <div className={styles.photoSlot} aria-hidden="true">
-                          <span className={styles.photoHint}>Foto próximamente</span>
-                        </div>
-                        <h4 className={styles.dishName}>{dish.name}</h4>
-                        <div className={styles.meta}>
-                          <p className={styles.price}>Precio próximamente</p>
-                          <p className={styles.availability}>Disponibilidad TBD</p>
-                        </div>
-                      </article>
-                    ))}
+                    {region.dishes.map((dish) => {
+                      const isPlaceholder =
+                        dish.imageSource === FOOD_PLACEHOLDER;
+                      return (
+                        <article key={dish.id} className={styles.card}>
+                          <div
+                            className={`${styles.photoSlot} ${styles.photoFilled}`}
+                          >
+                            <Image
+                              className={styles.photoImage}
+                              src={dish.imageSource}
+                              alt={
+                                isPlaceholder
+                                  ? `Espacio reservado para foto de ${dish.name}`
+                                  : dish.name
+                              }
+                              fill
+                              sizes="(max-width: 599px) 100vw, (max-width: 991px) 50vw, 33vw"
+                              unoptimized={isPlaceholder}
+                            />
+                            <span
+                              className={styles.priceBadge}
+                              tabIndex={0}
+                              aria-label={`${dish.name}: ${dish.price ?? "precio por confirmar"}`}
+                            >
+                              {dish.price ?? "Precio por confirmar"}
+                            </span>
+                            {isPlaceholder ? (
+                              <span className={styles.photoHint}>
+                                Foto próximamente
+                              </span>
+                            ) : null}
+                          </div>
+                          <h4 className={styles.dishName}>{dish.name}</h4>
+                          <p className={styles.description}>
+                            {dish.description}
+                          </p>
+                        </article>
+                      );
+                    })}
                   </div>
                 </div>
               </Reveal>
