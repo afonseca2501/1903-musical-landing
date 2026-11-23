@@ -6,6 +6,8 @@ export type MapGuideBlock = {
 export type MapGuideItem = {
   id: string;
   title: string;
+  /** Map marker codes shown on the printed plano (e.g. "1", "5A", "X"). */
+  codes: string[];
   lead?: string;
   blocks: MapGuideBlock[];
 };
@@ -17,6 +19,7 @@ export const MAP_GUIDE_ITEMS: MapGuideItem[] = [
   {
     id: "arrabal-santa-ana",
     title: "Puerta de tierra · Entrada y salida",
+    codes: ["A"],
     lead: "El comienzo de nuestro viaje.",
     blocks: [
       {
@@ -31,14 +34,15 @@ export const MAP_GUIDE_ITEMS: MapGuideItem[] = [
   {
     id: "san-felipe",
     title: "Pabellón San Felipe",
+    codes: ["1"],
     lead: "El escenario donde nació nuestra República.",
     blocks: [
       {
-        label: "Historia del Casco Antiguo · Oficina del Casco Antiguo",
+        label: "1 · Historia del Casco Antiguo · Oficina del Casco Antiguo",
         text: "De la fundación de la nueva ciudad en 1673 hasta el presente.",
       },
       {
-        label: "Come Coco Kitchen",
+        label: "2 · Come Coco Kitchen · Rest.-Bar",
         text: "Patty de tamal.",
       },
       {
@@ -50,6 +54,7 @@ export const MAP_GUIDE_ITEMS: MapGuideItem[] = [
   {
     id: "paris",
     title: "Pabellón París",
+    codes: ["3"],
     lead: "La conexión francesa con el destino del Canal de Panamá.",
     blocks: [
       {
@@ -69,6 +74,7 @@ export const MAP_GUIDE_ITEMS: MapGuideItem[] = [
   {
     id: "estados-unidos",
     title: "Pabellón Estados Unidos · Washington y Nueva York",
+    codes: ["4"],
     lead: "Dos ciudades, un capítulo decisivo para el futuro de Panamá.",
     blocks: [
       {
@@ -96,21 +102,23 @@ export const MAP_GUIDE_ITEMS: MapGuideItem[] = [
   {
     id: "colon",
     title: "Pabellón Colón",
+    codes: ["5A"],
     lead: "El ferrocarril que conectó dos océanos y transformó nuestra historia.",
     blocks: [
       {
-        label: "Ferrocarril de Panamá",
-        text: "Siéntate y disfruta de un momento dentro de un vagón inspirado en el ferrocarril, acompañado por los personajes de 1903.",
+        label: "5A · Come Coco Kitchen · Rest",
+        text: "Patty de carne · Dominguera · Bowl de jawarma.",
       },
       {
-        label: "Come Coco Kitchen",
-        text: "Patty de carne · Dominguera · Bowl de jawarma.",
+        label: "5B · Mesas · Ferrocarril de Panamá",
+        text: "Siéntate y disfruta de un momento dentro de un vagón inspirado en el ferrocarril, acompañado por los personajes de 1903.",
       },
     ],
   },
   {
     id: "bogota",
     title: "Pabellón Bogotá",
+    codes: ["6"],
     lead: "Una nación, dos caminos. El despecho de una separación.",
     blocks: [
       {
@@ -126,30 +134,35 @@ export const MAP_GUIDE_ITEMS: MapGuideItem[] = [
   {
     id: "plaza-independencia",
     title: "Plaza de la Independencia",
+    codes: ["X"],
     lead: "El corazón de nuestra celebración: experiencias, tiendas y sabores para descubrir.",
     blocks: [
+      {
+        label: "X · Plaza y gazebo",
+        text: "Punto central de la plaza para encontrarse, celebrar y orientarse en el recorrido.",
+      },
       {
         label: "Experiencia Don Julio · Un mensaje a la Patria",
         text: "Entra a la cabina telefónica y deja un mensaje dedicado a Panamá.",
       },
       {
-        label: "Pop Deli",
+        label: "7A · Eventos & Eventos · Pop Deli",
         text: "Palomitas de maíz dulces y saladas.",
       },
       {
-        label: "Sedería La Dalia · Tienda oficial de 1903",
+        label: "7B · Sedería La Dalia · Tienda oficial de 1903",
         text: "Inspirada en la tienda donde María Rosa compró sus telas. Compra mercancía oficial y personaliza gorras con bordados.",
       },
       {
-        label: "Experiencia Global Bank",
+        label: "8A · Experiencia Global Bank",
         text: "Activación por definir: caricaturista en vivo o experiencia de chocolates.",
       },
       {
-        label: "TAD by Todo a Dollar",
+        label: "8B · TAD by Todo a Dollar",
         text: "¡Más panameño que nunca! Artículos inspirados en Panamá y sus tradiciones.",
       },
       {
-        label: "Heladería Bonlac · Calidad que da gusto",
+        label: "8C · Heladería Bonlac · Calidad que da gusto",
         text: "Degustación de helados nacionales y dulces panameños. Sabores: Philippe Bunau Vainilla (vainilla) · Galleta María Ossa (galleta María) · Dulce Separación (dulce de leche) · Choco-lón (chocolate).",
       },
     ],
@@ -157,6 +170,7 @@ export const MAP_GUIDE_ITEMS: MapGuideItem[] = [
   {
     id: "prision",
     title: "La Prisión",
+    codes: ["9"],
     lead: "¿Te atreves a quedar tras las rejas de 1903?",
     blocks: [
       {
@@ -171,6 +185,7 @@ export const MAP_GUIDE_ITEMS: MapGuideItem[] = [
   {
     id: "entrada-teatro",
     title: "Entrada al teatro",
+    codes: ["B"],
     lead: "El gran momento ha llegado.",
     blocks: [
       {

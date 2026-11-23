@@ -1,51 +1,40 @@
 "use client";
 
 import { Reveal } from "@/components/Reveal";
-import { Media } from "@/components/relume/media";
-import { FeatureSectionMediaHorizontal } from "@/components/relume/feature-section-media-horizontal";
 import { MapGuideAccordion } from "@/components/home/map-guide-accordion";
+import { MapLegendPreview } from "@/components/home/map-legend-modal";
 import { MAP_GUIDE_INTRO } from "@/lib/map-guide";
+import { withSectionTemplate } from "@/lib/section-template";
+import styles from "./feature2.module.css";
 
 export function HomeFeature2(props: { backdropClass?: string }) {
   return (
     <Reveal>
-      <FeatureSectionMediaHorizontal
-        sectionScheme={"scheme-1"}
-        columnRatio={"1:1"}
-        sectionPadding={"Top Only"}
-        assetHorizontalPosition={"Left"}
-        contentVerticalAlignment={"Top"}
-        headingText={<>Guía del recorrido</>}
-        paragraphText={<>{MAP_GUIDE_INTRO}</>}
-        showTagline={true}
-        taglineText={"Para ubicarte"}
-        taglineHasIcon={false}
-        showParagraph={true}
-        showFeatureSupportingList={true}
-        featureSupportingListSlot={
-          <Reveal delay={0.12}>
+      <section
+        className={withSectionTemplate(
+          1,
+          "section",
+          props.backdropClass,
+          styles.section,
+        )}
+        data-template="1"
+      >
+        <div className={`container ${styles.stack}`}>
+          <div className={styles.mapBleed}>
+            <MapLegendPreview />
+          </div>
+
+          <header className={styles.header}>
+            <p className={styles.eyebrow}>Para ubicarte</p>
+            <h2 className={styles.title}>Guía del recorrido</h2>
+            <p className={styles.intro}>{MAP_GUIDE_INTRO}</p>
+          </header>
+
+          <Reveal delay={0.12} className={styles.guide}>
             <MapGuideAccordion />
           </Reveal>
-        }
-        showButtonGroup={false}
-        buttonGroupRows={[{ buttonHierarchy: "Secondary", buttonHasLeadingIcon: false, buttonHasTrailingIcon: false }]}
-        mediaSlot={
-          <Reveal delay={0.18}>
-            <Media
-              imageFit={"Contain"}
-              imageObjectPosition={"Center"}
-              mediaWidth={"100%"}
-              aspectRatio={"Auto"}
-              mediaType={"Image"}
-              imageSource={"/assets/mapa.webp"}
-              placeholderType={"Diagram"}
-              alt="Mapa del recinto"
-              sizes="(max-width: 991px) 100vw, 50vw"
-            />
-          </Reveal>
-        }
-        backdropClass={props.backdropClass}
-      />
+        </div>
+      </section>
     </Reveal>
   );
 }

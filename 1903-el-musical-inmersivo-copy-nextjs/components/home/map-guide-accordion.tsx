@@ -2,10 +2,23 @@
 
 import { useState } from "react";
 import { MAP_GUIDE_ITEMS } from "@/lib/map-guide";
+import { isMapGateCode, parseLeadingMapCode } from "@/lib/map-legend";
 import styles from "./map-guide-accordion.module.css";
 
+function MapCodeBadge({ code }: { code: string }) {
+  return (
+    <span
+      className={`${styles.code} ${isMapGateCode(code) ? styles.codeGate : styles.codePoint}`}
+    >
+      {code}
+    </span>
+  );
+}
+
 export function MapGuideAccordion() {
-  const [openId, setOpenId] = useState<string | null>(MAP_GUIDE_ITEMS[0]?.id ?? null);
+  const [openId, setOpenId] = useState<string | null>(
+    MAP_GUIDE_ITEMS[0]?.id ?? null,
+  );
 
   return (
     <div className={styles.root}>
@@ -22,7 +35,19 @@ export function MapGuideAccordion() {
               id={`map-guide-trigger-${item.id}`}
               onClick={() => setOpenId(isOpen ? null : item.id)}
             >
-              <span className={styles.title}>{item.title}</span>
+              <span className={styles.triggerMain}>
+                {item.codes.length > 0 ? (
+                  <span
+                    className={styles.codes}
+                    aria-label={`Puntos del mapa ${item.codes.join(", ")}`}
+                  >
+                    {item.codes.map((code) => (
+                      <MapCodeBadge key={`${item.id}-${code}`} code={code} />
+                    ))}
+                  </span>
+                ) : null}
+                <span className={styles.title}>{item.title}</span>
+              </span>
               <span
                 className={`${styles.chevron} ${isOpen ? styles.chevronOpen : ""}`}
                 aria-hidden="true"
@@ -42,14 +67,30 @@ export function MapGuideAccordion() {
                 <div className={styles.panelContent}>
                   {item.lead ? <p className={styles.lead}>{item.lead}</p> : null}
 
-                  {item.blocks.map((block, index) => (
-                    <div key={`${item.id}-block-${index}`} className={styles.block}>
-                      {block.label ? (
-                        <p className={styles.blockLabel}>{block.label}</p>
-                      ) : null}
-                      <p className={styles.blockText}>{block.text}</p>
-                    </div>
-                  ))}
+                  {item.blocks.map((block, index) => {
+                    const parsed = block.label
+                      ? parseLeadingMapCode(block.label)
+                      : null;
+
+                    return (
+                      <div
+                        key={`${item.id}-block-${index}`}
+                        className={styles.block}
+                      >
+                        {block.label ? (
+                          <div className={styles.blockLabelRow}>
+                            {parsed ? (
+                              <MapCodeBadge code={parsed.code} />
+                            ) : null}
+                            <p className={styles.blockLabel}>
+                              {parsed ? parsed.rest : block.label}
+                            </p>
+                          </div>
+                        ) : null}
+                        <p className={styles.blockText}>{block.text}</p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>

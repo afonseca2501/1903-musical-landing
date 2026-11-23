@@ -1,0 +1,244 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.mapButton {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, #b07b3e 40%, transparent);
+  border-radius: var(--radius-medium, 0.5rem);
+  background: color-mix(in srgb, #e4d5b7 35%, #fff);
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.mapButton:hover,
+.mapButton:focus-visible {
+  border-color: #b07b3e;
+  outline: none;
+  box-shadow: 0 0 0 2px color-mix(in srgb, #b07b3e 35%, transparent);
+}
+
+.mapFrame {
+  display: block;
+  position: relative;
+  width: 100%;
+  line-height: 0;
+  background: #e4d5b7;
+}
+
+.mapImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1080 / 1920;
+  object-fit: contain;
+  object-position: center;
+}
+
+.legendTrigger {
+  margin: 0;
+  padding: 0.2rem 0.1rem;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, #b07b3e 45%, transparent);
+  border-radius: 0;
+  background: transparent;
+  color: color-mix(in srgb, #6e4b30 90%, #17120e);
+  font-family: var(--font-family-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.legendTrigger:hover,
+.legendTrigger:focus-visible {
+  color: #17120e;
+  border-bottom-color: #b07b3e;
+  outline: none;
+}
+
+.legendTrigger:focus-visible {
+  box-shadow: 0 0 0 2px color-mix(in srgb, #b07b3e 35%, transparent);
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: color-mix(in srgb, #17120e 62%, transparent);
+  backdrop-filter: blur(4px);
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: min(100%, 28rem);
+  max-height: min(88vh, 40rem);
+  padding: clamp(1.1rem, 3vw, 1.5rem);
+  border: 1px solid color-mix(in srgb, #b07b3e 35%, transparent);
+  border-radius: 0.75rem;
+  background: #e4d5b7;
+  color: #17120e;
+  box-shadow: 0 24px 64px color-mix(in srgb, #17120e 35%, transparent);
+  overflow: hidden;
+}
+
+.dialogHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.dialogEyebrow {
+  margin: 0 0 0.25rem;
+  color: color-mix(in srgb, #6e4b30 85%, #17120e);
+  font-family: var(--font-family-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.dialogTitle {
+  margin: 0;
+  color: #17120e;
+  font-family: var(--font-family-heading);
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.closeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: 0;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, #6e4b30 35%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, #fff 55%, transparent);
+  color: #17120e;
+  font-family: var(--font-family-body);
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.closeButton:hover,
+.closeButton:focus-visible {
+  border-color: #b07b3e;
+  background: #fff;
+  outline: none;
+}
+
+.closeButton:focus-visible {
+  box-shadow: 0 0 0 2px color-mix(in srgb, #b07b3e 40%, transparent);
+}
+
+.dialogIntro {
+  margin: 0;
+  color: rgba(23, 18, 14, 0.72);
+  font-family: var(--font-family-body);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0.15rem 0.15rem 0.35rem;
+  list-style: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: color-mix(in srgb, #6e4b30 45%, transparent) transparent;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.55rem 0.65rem;
+  border-left: 2px solid color-mix(in srgb, #b07b3e 65%, transparent);
+  border-radius: 0 0.4rem 0.4rem 0;
+  background: color-mix(in srgb, #fff 48%, transparent);
+}
+
+.marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.1rem;
+  height: 2.1rem;
+  min-width: 2.1rem;
+  min-height: 2.1rem;
+  padding: 0;
+  border-radius: 999px;
+  border-style: solid;
+  border-width: 1.5px;
+  font-family: var(--font-family-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.markerGate {
+  border-color: #2a2118;
+  background: #e2a538;
+  color: #1b1612;
+}
+
+.markerPoint {
+  border-color: #6e1b15;
+  background: #9e2a22;
+  color: #ffffff;
+}
+
+.label {
+  margin: 0;
+  color: #17120e;
+  font-family: var(--font-family-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mapButton,
+  .legendTrigger,
+  .closeButton {
+    transition: none;
+  }
+}
