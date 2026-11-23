@@ -40,7 +40,7 @@ export const DRINK_CATEGORIES: DrinkCategory[] = [
         id: "copa-beronia-verdejo",
         name: "Copa Beronia Verdejo",
         detail: "blanco",
-        price: "$7.00",
+        price: "$8.00",
       },
       {
         id: "botella-beronia-verdejo",
