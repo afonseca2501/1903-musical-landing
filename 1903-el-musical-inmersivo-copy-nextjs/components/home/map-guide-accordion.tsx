@@ -35,19 +35,7 @@ export function MapGuideAccordion() {
               id={`map-guide-trigger-${item.id}`}
               onClick={() => setOpenId(isOpen ? null : item.id)}
             >
-              <span className={styles.triggerMain}>
-                {item.codes.length > 0 ? (
-                  <span
-                    className={styles.codes}
-                    aria-label={`Puntos del mapa ${item.codes.join(", ")}`}
-                  >
-                    {item.codes.map((code) => (
-                      <MapCodeBadge key={`${item.id}-${code}`} code={code} />
-                    ))}
-                  </span>
-                ) : null}
-                <span className={styles.title}>{item.title}</span>
-              </span>
+              <span className={styles.title}>{item.title}</span>
               <span
                 className={`${styles.chevron} ${isOpen ? styles.chevronOpen : ""}`}
                 aria-hidden="true"

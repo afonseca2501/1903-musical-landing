@@ -67,7 +67,7 @@ export const FOOD_MENU_REGIONS: FoodMenuRegion[] = [
   },
   {
     id: "usa",
-    title: "USA",
+    title: "Estados Unidos",
     dishes: [
       {
         id: "smoky-dog",

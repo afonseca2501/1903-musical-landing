@@ -155,7 +155,7 @@ export const MAP_GUIDE_ITEMS: MapGuideItem[] = [
       },
       {
         label: "8A · Experiencia Global Bank",
-        text: "Activación por definir: caricaturista en vivo o experiencia de chocolates.",
+        text: "Disfruta de una degustación de chocolates, captura un recuerdo especial y deja un mensaje para Panamá.",
       },
       {
         label: "8B · TAD by Todo a Dollar",
