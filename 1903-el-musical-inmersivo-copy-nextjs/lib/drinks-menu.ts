@@ -170,6 +170,12 @@ export const DRINK_CATEGORIES: DrinkCategory[] = [
         detail: "incluye 1 mezclador",
         price: "$70.00",
       },
+      {
+        id: "botella-seco-herrerano-cristalino-reposado",
+        name: "Botella Seco Herrerano Cristalino Reposado",
+        detail: "incluye 2 mezcladores",
+        price: "$60.00",
+      },
     ],
   },
   {
