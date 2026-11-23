@@ -2,13 +2,19 @@
 
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
-import { CAST_MEMBERS, CAST_PLACEHOLDER, type CastMember } from "@/lib/elenco";
+import {
+  CAST_MEMBERS,
+  CAST_PLACEHOLDER,
+  type CastMember,
+} from "@/lib/elenco";
 import { withSectionTemplate } from "@/lib/section-template";
 import styles from "./cast-grid.module.css";
 
-function CastCard({ member }: { member: CastMember }) {
-  const isPlaceholder = member.imageSource === CAST_PLACEHOLDER;
+function hasCastPhoto(member: CastMember): boolean {
+  return member.imageSource !== CAST_PLACEHOLDER;
+}
 
+function CastCard({ member }: { member: CastMember }) {
   return (
     <article className={styles.card}>
       <div className={styles.photo}>
@@ -18,7 +24,6 @@ function CastCard({ member }: { member: CastMember }) {
           alt={member.name}
           fill
           sizes="(max-width: 599px) 100vw, (max-width: 991px) 50vw, 33vw"
-          unoptimized={isPlaceholder}
         />
       </div>
       <h3 className={styles.name}>{member.name}</h3>
@@ -27,7 +32,22 @@ function CastCard({ member }: { member: CastMember }) {
   );
 }
 
+function EnsembleEntry({ member }: { member: CastMember }) {
+  return (
+    <li className={styles.ensembleItem}>
+      <span className={styles.ensembleMark} aria-hidden="true" />
+      <div className={styles.ensembleCopy}>
+        <p className={styles.ensembleName}>{member.name}</p>
+        <p className={styles.ensembleRole}>{member.role}</p>
+      </div>
+    </li>
+  );
+}
+
 export function HomeTeam(props: { backdropClass?: string }) {
+  const withPhoto = CAST_MEMBERS.filter(hasCastPhoto);
+  const withoutPhoto = CAST_MEMBERS.filter((member) => !hasCastPhoto(member));
+
   return (
     <section
       className={withSectionTemplate(
@@ -51,10 +71,32 @@ export function HomeTeam(props: { backdropClass?: string }) {
           </header>
         </Reveal>
 
-        <div className={styles.grid} aria-label="Elenco estelar completo">
-          {CAST_MEMBERS.map((member) => (
-            <CastCard key={member.name} member={member} />
-          ))}
+        <div className={styles.castContent}>
+          {withPhoto.length > 0 ? (
+            <div
+              className={styles.grid}
+              aria-label="Elenco estelar con fotografía"
+            >
+              {withPhoto.map((member) => (
+                <CastCard key={member.name} member={member} />
+              ))}
+            </div>
+          ) : null}
+
+          {withoutPhoto.length > 0 ? (
+            <div className={styles.ensembleBlock}>
+              <div className={styles.ensembleRule} aria-hidden="true" />
+              <p className={styles.ensembleEyebrow}>Ensemble y reparto</p>
+              <ul
+                className={styles.ensembleGrid}
+                aria-label="Ensemble y reparto sin fotografía"
+              >
+                {withoutPhoto.map((member) => (
+                  <EnsembleEntry key={member.name} member={member} />
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </div>
       </div>
     </section>
