@@ -69,7 +69,7 @@ export function HomeFeature(props: { backdropClass?: string }) {
           },
         ]}
         mediaSlot={
-          <Reveal delay={0.15}>
+          <Reveal delay={0.08}>
             <HistoriaVideoSequence />
           </Reveal>
         }

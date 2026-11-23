@@ -16,7 +16,7 @@ export function TeamListGrid4ColumnVerticalSection(props: TeamListGrid4ColumnVer
   return (
     <div className="grid-column-4">
       {items.map((row, index) => (
-        <Reveal key={index} delay={index * 0.06}>
+        <Reveal key={index} delay={Math.min(index * 0.05, 0.2)}>
           <TeamItemMedium
             {...row}
             contentHorizontalAlignment={contentHorizontalAlignment}

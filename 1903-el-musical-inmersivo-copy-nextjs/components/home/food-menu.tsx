@@ -38,7 +38,7 @@ export function HomeFoodMenu(props: { backdropClass?: string }) {
 
           <div className={styles.regions}>
             {FOOD_MENU_REGIONS.map((region, regionIndex) => (
-              <Reveal key={region.id} delay={0.06 * regionIndex}>
+              <Reveal key={region.id} delay={Math.min(0.06 * regionIndex, 0.18)}>
                 <div className={styles.region}>
                   <h3 className={styles.regionTitle}>{region.title}</h3>
                   <div className={styles.grid}>

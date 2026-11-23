@@ -15,7 +15,7 @@ export function FeatureListGrid3ColumnVerticalSection(props: FeatureListGrid3Col
   return (
     <div className="grid-column-3">
       {items.map((row, index) => (
-        <Reveal key={index} delay={index * 0.1}>
+        <Reveal key={index} delay={Math.min(index * 0.05, 0.2)}>
           <ListRow values={{ contentHorizontalAlignment: contentHorizontalAlignment }}>
             <FeatureItemMediumVertical
               {...row}

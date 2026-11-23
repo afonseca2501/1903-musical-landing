@@ -26,7 +26,7 @@ export function HomeNikkiDeRoy(props: { backdropClass?: string }) {
       >
         <div className="container">
           <div className={styles.layout}>
-            <Reveal className={styles.revealFull} delay={0.06}>
+            <Reveal className={styles.revealFull} delay={0.05}>
               <div className={styles.portraitCol}>
                 <div className={styles.portraitFrame}>
                   <Image
@@ -40,7 +40,7 @@ export function HomeNikkiDeRoy(props: { backdropClass?: string }) {
               </div>
             </Reveal>
 
-            <Reveal className={styles.revealFull} delay={0.12}>
+            <Reveal className={styles.revealFull} delay={0.1}>
               <div className={styles.narrativeCol}>
                 <p className={styles.eyebrow}>En honor a Nikki de Roy</p>
                 <h2 id="nikki-de-roy-title" className={styles.title}>

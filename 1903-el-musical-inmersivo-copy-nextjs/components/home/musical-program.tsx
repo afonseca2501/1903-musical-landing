@@ -23,7 +23,7 @@ export function HomeMusicalProgram(props: { backdropClass?: string }) {
 
           <div className={styles.acts}>
             {MUSICAL_PROGRAM_ACTS.map((act, actIndex) => (
-              <Reveal key={act.id} delay={0.08 * actIndex}>
+              <Reveal key={act.id} delay={Math.min(0.06 * actIndex, 0.18)}>
                 <article className={styles.act}>
                   <h3 className={styles.actTitle}>{act.title}</h3>
                   <ol className={styles.songList}>

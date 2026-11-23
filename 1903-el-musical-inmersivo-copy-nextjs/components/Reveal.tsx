@@ -17,10 +17,12 @@ export type RevealProps = {
 >;
 
 const OFFSET: Record<RevealDirection, { x?: number; y?: number }> = {
-  up: { y: 28 },
-  left: { x: -36 },
-  right: { x: 36 },
+  up: { y: 18 },
+  left: { x: -22 },
+  right: { x: 22 },
 };
+
+const MAX_DELAY_S = 0.24;
 
 export function Reveal({
   children,
@@ -31,6 +33,7 @@ export function Reveal({
 }: RevealProps) {
   const reduceMotion = useReducedMotion();
   const offset = OFFSET[direction];
+  const safeDelay = Math.min(Math.max(delay, 0), MAX_DELAY_S);
 
   if (reduceMotion) {
     return <div className={className}>{children}</div>;
@@ -41,11 +44,16 @@ export function Reveal({
       className={className}
       initial={{ opacity: 0, ...offset }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{
+        once: true,
+        amount: 0.05,
+        // Expand the top of the root so items fire as they approach the viewport.
+        margin: "100px 0px -40px 0px",
+      }}
       transition={{
-        duration: 0.65,
+        duration: 0.5,
         ease: [0.22, 1, 0.36, 1],
-        delay,
+        delay: safeDelay,
       }}
       {...props}
     >

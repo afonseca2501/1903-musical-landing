@@ -30,7 +30,7 @@ export function HomeFeature2(props: { backdropClass?: string }) {
             <p className={styles.intro}>{MAP_GUIDE_INTRO}</p>
           </header>
 
-          <Reveal delay={0.12} className={styles.guide}>
+          <Reveal delay={0.06} className={styles.guide}>
             <MapGuideAccordion />
           </Reveal>
         </div>

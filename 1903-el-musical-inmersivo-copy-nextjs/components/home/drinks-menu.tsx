@@ -26,7 +26,7 @@ export function HomeDrinksMenu(props: { backdropClass?: string }) {
 
           <div className={styles.categories}>
             {DRINK_CATEGORIES.map((category, index) => (
-              <Reveal key={category.id} delay={Math.min(0.04 * index, 0.28)}>
+              <Reveal key={category.id} delay={Math.min(0.05 * index, 0.2)}>
                 <div className={styles.category}>
                   <h3 className={styles.categoryTitle}>{category.title}</h3>
                   <ul className={styles.list}>
