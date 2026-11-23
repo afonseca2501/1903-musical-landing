@@ -22,6 +22,56 @@ export const FOOD_MENU_INTRO =
 
 export const FOOD_MENU_REGIONS: FoodMenuRegion[] = [
   {
+    id: "san-felipe",
+    title: "San Felipe",
+    dishes: [
+      {
+        id: "patty-de-tamal",
+        name: "Patty de Tamal",
+        description:
+          "Patty rellena de masa de tamal y costillita con guiso panameño.",
+        price: "$5.00",
+        imageSource: `${FOOD_DIR}/patty-de-tamal.webp`,
+      },
+    ],
+  },
+  {
+    id: "paris",
+    title: "París",
+    dishes: [
+      {
+        id: "plantain-tart-french-toast",
+        name: "Plantain Tart French Toast",
+        description:
+          "Brioche caramelizado hecho en casa, relleno de plantain tart y helado de vainilla.",
+        price: "$8.00",
+        imageSource: `${FOOD_DIR}/plantain-tart-french-toast.webp`,
+      },
+    ],
+  },
+  {
+    id: "usa",
+    title: "Estados Unidos",
+    dishes: [
+      {
+        id: "smoky-dog",
+        name: "Smoky Dog",
+        description:
+          "Salchicha ahumada en sweet roll con mantequilla de ajo, jerkchup, tártara, scovitch y chips de plátano.",
+        price: "$10.00",
+        imageSource: `${FOOD_DIR}/smoky-dog.webp`,
+      },
+      {
+        id: "chili-cheese-melt",
+        name: "Chili Cheese Melt",
+        description:
+          "Emparedado relleno de chili con carne y queso derretido, servido con pepinillos caseros.",
+        price: "$8.00",
+        imageSource: `${FOOD_DIR}/chili-cheese-melt.webp`,
+      },
+    ],
+  },
+  {
     id: "colon",
     title: "Colón",
     dishes: [
@@ -62,56 +112,6 @@ export const FOOD_MENU_REGIONS: FoodMenuRegion[] = [
           "Arepa rellena de pastrami, oxtail, aguacate, queso costeño y frijoles rojos.",
         price: "$10.00",
         imageSource: `${FOOD_DIR}/arepa-de-pastrami.webp`,
-      },
-    ],
-  },
-  {
-    id: "usa",
-    title: "Estados Unidos",
-    dishes: [
-      {
-        id: "smoky-dog",
-        name: "Smoky Dog",
-        description:
-          "Salchicha ahumada en sweet roll con mantequilla de ajo, jerkchup, tártara, scovitch y chips de plátano.",
-        price: "$10.00",
-        imageSource: `${FOOD_DIR}/smoky-dog.webp`,
-      },
-      {
-        id: "chili-cheese-melt",
-        name: "Chili Cheese Melt",
-        description:
-          "Emparedado relleno de chili con carne y queso derretido, servido con pepinillos caseros.",
-        price: "$8.00",
-        imageSource: `${FOOD_DIR}/chili-cheese-melt.webp`,
-      },
-    ],
-  },
-  {
-    id: "paris",
-    title: "París",
-    dishes: [
-      {
-        id: "plantain-tart-french-toast",
-        name: "Plantain Tart French Toast",
-        description:
-          "Brioche caramelizado hecho en casa, relleno de plantain tart y helado de vainilla.",
-        price: "$8.00",
-        imageSource: `${FOOD_DIR}/plantain-tart-french-toast.webp`,
-      },
-    ],
-  },
-  {
-    id: "san-felipe",
-    title: "San Felipe",
-    dishes: [
-      {
-        id: "patty-de-tamal",
-        name: "Patty de Tamal",
-        description:
-          "Patty rellena de masa de tamal y costillita con guiso panameño.",
-        price: "$5.00",
-        imageSource: `${FOOD_DIR}/patty-de-tamal.webp`,
       },
     ],
   },
