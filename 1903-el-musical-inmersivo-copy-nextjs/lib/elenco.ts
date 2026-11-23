@@ -20,6 +20,7 @@ const HEADSHOT_BY_FULL_NAME: Record<string, string> = {
   "Eusebio Pedroza": `${ELENCO_DIR}/eusebio-pedroza.webp`,
   "Alex Montes": `${ELENCO_DIR}/alex-montes.webp`,
   "Freddy Araúz": `${ELENCO_DIR}/freddy-arauz.webp`,
+  "Mariano González": `${ELENCO_DIR}/mariano-gonzalez.webp`,
   "Kevin Carrillo (Robinho)": `${ELENCO_DIR}/kevin-carrillo.webp`,
   "Edixo Jiménez": `${ELENCO_DIR}/edixo-jimenez.webp`,
   "Santiago Bustamante": `${ELENCO_DIR}/santiago-bustamante.webp`,
@@ -27,6 +28,7 @@ const HEADSHOT_BY_FULL_NAME: Record<string, string> = {
   "Omar Stevens": `${ELENCO_DIR}/omar-stevens.webp`,
   "Aaron Zebede": `${ELENCO_DIR}/aaron-zebede.webp`,
   "Hermes Mendoza": `${ELENCO_DIR}/hermes-mendoza.webp`,
+  "Juan Diego Araúz": `${ELENCO_DIR}/juan-diego-arauz.webp`,
 };
 
 export function castImageFor(name: string): string {
@@ -65,8 +67,7 @@ const CAST_RAW: { name: string; role: string }[] = [
   { name: "Hermes Mendoza", role: "Victoriano Lorenzo / Ensemble" },
   {
     name: "Juan Diego Araúz",
-    role:
-      "Juan Bautista Pérez y Soto / Duque / John Hay / Herbert Prescott / Ensemble",
+    role: "Juan Bautista Pérez y Soto / John Hay / Herbert Prescott",
   },
   {
     name: "Odette Versailles",
