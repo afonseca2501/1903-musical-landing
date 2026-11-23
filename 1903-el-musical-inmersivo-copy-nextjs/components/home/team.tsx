@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import {
   CAST_MEMBERS,
@@ -15,15 +16,20 @@ function hasCastPhoto(member: CastMember): boolean {
 }
 
 function CastCard({ member }: { member: CastMember }) {
+  const [src, setSrc] = useState(member.imageSource);
+
   return (
     <article className={styles.card}>
       <div className={styles.photo}>
         <Image
           className={styles.photoImage}
-          src={member.imageSource}
+          src={src}
           alt={member.name}
           fill
           sizes="(max-width: 767px) 50vw, 33vw"
+          onError={() => {
+            if (src !== CAST_PLACEHOLDER) setSrc(CAST_PLACEHOLDER);
+          }}
         />
       </div>
       <h3 className={styles.name}>{member.name}</h3>

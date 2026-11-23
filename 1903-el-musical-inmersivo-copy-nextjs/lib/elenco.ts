@@ -26,6 +26,7 @@ const HEADSHOT_BY_FULL_NAME: Record<string, string> = {
   "Santiago Bustamante": `${ELENCO_DIR}/santiago-bustamante.webp`,
   "Elmis Castillo": `${ELENCO_DIR}/elmis-castillo.webp`,
   "Omar Stevens": `${ELENCO_DIR}/omar-stevens.webp`,
+  "Juan Rangel": `${ELENCO_DIR}/juan-rangel.webp`,
   "Aaron Zebede": `${ELENCO_DIR}/aaron-zebede.webp`,
   "Hermes Mendoza": `${ELENCO_DIR}/hermes-mendoza.webp`,
   "Juan Diego Araúz": `${ELENCO_DIR}/juan-diego-arauz.webp`,
