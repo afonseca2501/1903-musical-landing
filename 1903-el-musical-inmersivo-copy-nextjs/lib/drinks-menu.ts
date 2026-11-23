@@ -259,7 +259,7 @@ export const DRINK_CATEGORIES: DrinkCategory[] = [
       {
         id: "agua-panama-blue",
         name: "Agua Panama Blue",
-        price: "$3.00",
+        price: "$4.00",
       },
     ],
   },
