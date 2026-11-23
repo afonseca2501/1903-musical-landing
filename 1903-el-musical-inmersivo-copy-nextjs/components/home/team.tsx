@@ -23,7 +23,7 @@ function CastCard({ member }: { member: CastMember }) {
           src={member.imageSource}
           alt={member.name}
           fill
-          sizes="(max-width: 599px) 100vw, (max-width: 991px) 50vw, 33vw"
+          sizes="(max-width: 767px) 50vw, 33vw"
         />
       </div>
       <h3 className={styles.name}>{member.name}</h3>
