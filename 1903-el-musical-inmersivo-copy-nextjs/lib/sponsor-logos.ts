@@ -98,10 +98,10 @@ const SPONSOR_LOGO_FILES = [
   "PHOTO-2026-10-30-08-43-03.webp",
   "RIGSA_Logo_Positivo.webp",
   "SecoHerrerano.webp",
+  "ronabuelo.webp",
   "bonlac.webp",
   "oro-de-cana.webp",
   "panaticket.webp",
-  "ronabuelo.webp",
 ] as const;
 
 /** Production company logos in `public/assets/logos/produce`. */
