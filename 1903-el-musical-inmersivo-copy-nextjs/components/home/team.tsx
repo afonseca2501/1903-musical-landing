@@ -6,14 +6,12 @@ import { Reveal } from "@/components/Reveal";
 import {
   CAST_MEMBERS,
   CAST_PLACEHOLDER,
+  hasEnsemblePhoto,
+  hasStarringPhoto,
   type CastMember,
 } from "@/lib/elenco";
 import { withSectionTemplate } from "@/lib/section-template";
 import styles from "./cast-grid.module.css";
-
-function hasCastPhoto(member: CastMember): boolean {
-  return member.imageSource !== CAST_PLACEHOLDER;
-}
 
 function CastCard({ member }: { member: CastMember }) {
   const [src, setSrc] = useState(member.imageSource);
@@ -51,8 +49,11 @@ function EnsembleEntry({ member }: { member: CastMember }) {
 }
 
 export function HomeTeam(props: { backdropClass?: string }) {
-  const withPhoto = CAST_MEMBERS.filter(hasCastPhoto);
-  const withoutPhoto = CAST_MEMBERS.filter((member) => !hasCastPhoto(member));
+  const withPhoto = CAST_MEMBERS.filter(hasStarringPhoto);
+  const ensembleWithPhoto = CAST_MEMBERS.filter(hasEnsemblePhoto);
+  const withoutPhoto = CAST_MEMBERS.filter(
+    (member) => !hasStarringPhoto(member) && !hasEnsemblePhoto(member),
+  );
 
   return (
     <section
@@ -89,18 +90,32 @@ export function HomeTeam(props: { backdropClass?: string }) {
             </div>
           ) : null}
 
-          {withoutPhoto.length > 0 ? (
+          {ensembleWithPhoto.length > 0 || withoutPhoto.length > 0 ? (
             <div className={styles.ensembleBlock}>
               <div className={styles.ensembleRule} aria-hidden="true" />
               <p className={styles.ensembleEyebrow}>Ensemble y reparto</p>
-              <ul
-                className={styles.ensembleGrid}
-                aria-label="Ensemble y reparto sin fotografía"
-              >
-                {withoutPhoto.map((member) => (
-                  <EnsembleEntry key={member.name} member={member} />
-                ))}
-              </ul>
+
+              {ensembleWithPhoto.length > 0 ? (
+                <div
+                  className={styles.grid}
+                  aria-label="Ensemble y reparto con fotografía"
+                >
+                  {ensembleWithPhoto.map((member) => (
+                    <CastCard key={member.name} member={member} />
+                  ))}
+                </div>
+              ) : null}
+
+              {withoutPhoto.length > 0 ? (
+                <ul
+                  className={styles.ensembleGrid}
+                  aria-label="Ensemble y reparto sin fotografía"
+                >
+                  {withoutPhoto.map((member) => (
+                    <EnsembleEntry key={member.name} member={member} />
+                  ))}
+                </ul>
+              ) : null}
             </div>
           ) : null}
         </div>

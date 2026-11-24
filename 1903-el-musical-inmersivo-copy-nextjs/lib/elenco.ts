@@ -7,6 +7,7 @@ export type CastMember = {
 export const CAST_PLACEHOLDER = "/placeholders/placeholder-8ef0c9cf.svg";
 
 const ELENCO_DIR = "/assets/Elenco/estelar";
+const ENSEMBLE_DIR = "/assets/Elenco/ensamble";
 
 /** Explicit headshots keyed by full cast name (as in CAST_RAW). */
 const HEADSHOT_BY_FULL_NAME: Record<string, string> = {
@@ -32,8 +33,27 @@ const HEADSHOT_BY_FULL_NAME: Record<string, string> = {
   "Juan Diego Araúz": `${ELENCO_DIR}/juan-diego-arauz.webp`,
 };
 
+/** Ensemble / reparto portraits (shown under “Ensemble y reparto”). */
+const ENSEMBLE_HEADSHOT_BY_FULL_NAME: Record<string, string> = {
+  "Odette Versailles": `${ENSEMBLE_DIR}/odette-versailles.webp`,
+  "Angeli Pino": `${ENSEMBLE_DIR}/angeli-pino.webp`,
+  "Daniella Córdoba": `${ENSEMBLE_DIR}/daniella-cordoba.webp`,
+};
+
 export function castImageFor(name: string): string {
-  return HEADSHOT_BY_FULL_NAME[name] ?? CAST_PLACEHOLDER;
+  return (
+    HEADSHOT_BY_FULL_NAME[name] ??
+    ENSEMBLE_HEADSHOT_BY_FULL_NAME[name] ??
+    CAST_PLACEHOLDER
+  );
+}
+
+export function hasStarringPhoto(member: CastMember): boolean {
+  return Boolean(HEADSHOT_BY_FULL_NAME[member.name]);
+}
+
+export function hasEnsemblePhoto(member: CastMember): boolean {
+  return Boolean(ENSEMBLE_HEADSHOT_BY_FULL_NAME[member.name]);
 }
 
 const CAST_RAW: { name: string; role: string }[] = [
