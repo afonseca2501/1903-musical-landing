@@ -1,0 +1,6 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "installCommand": "npm install --prefix 1903-el-musical-inmersivo-copy-nextjs",
+  "buildCommand": "npm run build --prefix 1903-el-musical-inmersivo-copy-nextjs && rm -rf .next && cp -R 1903-el-musical-inmersivo-copy-nextjs/.next .next"
+}

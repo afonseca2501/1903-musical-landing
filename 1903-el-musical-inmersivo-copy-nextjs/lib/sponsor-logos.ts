@@ -34,6 +34,7 @@ function altFromFilename(filename: string) {
     "oro-de-cana.webp": "Oro de Caña",
     "panaticket.webp": "Panatickets",
     "SecoHerrerano.webp": "Seco Herrerano",
+    "ronabuelo.webp": "Ron Abuelo Panamá",
     "Logo Full House.webp": "Full House",
     "Logo Stardust.webp": "Stardust Entertainment",
   };
@@ -69,6 +70,7 @@ const PROMINENT_LOGO_FILES = new Set([
   "Logo horizontal.webp",
   "LogoMuseo01-A.webp",
   "PHOTO-2026-10-30-08-43-03.webp",
+  "ronabuelo.webp",
 ]);
 
 function shapeFromFilename(filename: string): SponsorLogoShape {
@@ -99,6 +101,7 @@ const SPONSOR_LOGO_FILES = [
   "bonlac.webp",
   "oro-de-cana.webp",
   "panaticket.webp",
+  "ronabuelo.webp",
 ] as const;
 
 /** Production company logos in `public/assets/logos/produce`. */
