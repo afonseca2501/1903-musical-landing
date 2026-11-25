@@ -35,9 +35,17 @@ const HEADSHOT_BY_FULL_NAME: Record<string, string> = {
 
 /** Ensemble / reparto portraits (shown under “Ensemble y reparto”). */
 const ENSEMBLE_HEADSHOT_BY_FULL_NAME: Record<string, string> = {
+  "Jordi Alvarado": `${ENSEMBLE_DIR}/jordi-alvarado.webp`,
   "Odette Versailles": `${ENSEMBLE_DIR}/odette-versailles.webp`,
+  "Mia Rocha": `${ENSEMBLE_DIR}/mia-rocha.webp`,
+  "Adela Owens": `${ENSEMBLE_DIR}/adela-owens.webp`,
   "Angeli Pino": `${ENSEMBLE_DIR}/angeli-pino.webp`,
   "Daniella Córdoba": `${ENSEMBLE_DIR}/daniella-cordoba.webp`,
+  "Nasharin Kruskaya Rodriguez": `${ENSEMBLE_DIR}/nasharin-kruskaya-rodriguez.webp`,
+  "Juliette Carles": `${ENSEMBLE_DIR}/juliette-carles.webp`,
+  "Yheilin Lee": `${ENSEMBLE_DIR}/yheilin-lee.webp`,
+  "Anthony De León": `${ENSEMBLE_DIR}/anthony-de-leon.webp`,
+  "Santiago Benavides V.": `${ENSEMBLE_DIR}/santiago-benavides.webp`,
 };
 
 export function castImageFor(name: string): string {
