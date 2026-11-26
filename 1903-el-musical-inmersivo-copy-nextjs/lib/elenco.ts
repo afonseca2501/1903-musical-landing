@@ -46,6 +46,8 @@ const ENSEMBLE_HEADSHOT_BY_FULL_NAME: Record<string, string> = {
   "Yheilin Lee": `${ENSEMBLE_DIR}/yheilin-lee.webp`,
   "Anthony De León": `${ENSEMBLE_DIR}/anthony-de-leon.webp`,
   "Santiago Benavides V.": `${ENSEMBLE_DIR}/santiago-benavides.webp`,
+  "Ana Elena Navarro": `${ENSEMBLE_DIR}/ana-elena-navarro.webp`,
+  "Marcell Antonio Chávez González": `${ENSEMBLE_DIR}/marcell-antonio-chavez-gonzalez.webp`,
 };
 
 export function castImageFor(name: string): string {
@@ -115,7 +117,10 @@ const CAST_RAW: { name: string; role: string }[] = [
     name: "Santiago Benavides V.",
     role: "Presidente del Congreso / Ensemble",
   },
-  { name: "Marcell Chávez (Arvejita)", role: "Edecan de PBV" },
+  {
+    name: "Marcell Antonio Chávez González",
+    role: "Petipuá",
+  },
 ];
 
 export const CAST_MEMBERS: CastMember[] = CAST_RAW.map((member) => ({
