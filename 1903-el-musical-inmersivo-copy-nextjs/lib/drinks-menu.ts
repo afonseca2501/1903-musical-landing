@@ -171,6 +171,22 @@ export const DRINK_CATEGORIES: DrinkCategory[] = [
         price: "$70.00",
       },
       {
+        id: "trago-ron-7-anos",
+        name: "Trago de Ron 7 Años",
+        price: "$10.00",
+      },
+      {
+        id: "botella-ron-7-anos",
+        name: "Botella de Ron 7 Años",
+        price: "$80.00",
+      },
+      {
+        id: "trago-seco-herrerano",
+        name: "Trago de Seco Herrerano",
+        detail: "con perrier limon",
+        price: "$10.00",
+      },
+      {
         id: "botella-seco-herrerano-cristalino-reposado",
         name: "Botella Seco Herrerano Cristalino Reposado",
         detail: "incluye 2 mezcladores",
